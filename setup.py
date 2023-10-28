@@ -22,7 +22,7 @@ def _load_req(file: str):
 requirements = _load_req('requirements.txt')
 
 _REQ_PATTERN = re.compile(r'^requirements-(\w+)\.txt$')
-_REQ_BLACKLIST = {'zoo', 'text'}
+_REQ_BLACKLIST = {'zoo', 'test'}
 group_requirements = {
     item.group(1): _load_req(item.group(0))
     for item in [_REQ_PATTERN.fullmatch(reqpath) for reqpath in os.listdir()] if item
@@ -53,7 +53,7 @@ setup(
     # environment
     python_requires=">=3.7",
     install_requires=requirements,
-    tests_require=group_requirements['test'],
+    tests_require=list(group_requirements.get('test') or []),
     extras_require=group_requirements,
     classifiers=[
         'Development Status :: 5 - Production/Stable',
