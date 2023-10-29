@@ -9,7 +9,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Installation &mdash; pyanimeinfo 0.0.1 documentation</title>
+  <title>pyanimeinfo.utils &mdash; pyanimeinfo 0.0.1 documentation</title>
   
 
   
@@ -37,8 +37,8 @@
   <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="pyanimeinfo.bangumitv" href="../../api_doc/bangumitv/index.html" />
-    <link rel="prev" title="Welcome to pyanimeinfo’s Documentation" href="../../index.html" /> 
+    <link rel="next" title="pyanimeinfo.utils.download" href="download.html" />
+    <link rel="prev" title="pyanimeinfo.config.meta" href="../config/meta.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -87,14 +87,20 @@
             
             
               <p><span class="caption-text">Tutorials</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/installation/index.html">Installation</a></li>
 </ul>
 <p><span class="caption-text">API Documentation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../api_doc/bangumitv/index.html">pyanimeinfo.bangumitv</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api_doc/config/index.html">pyanimeinfo.config</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../api_doc/utils/index.html">pyanimeinfo.utils</a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../bangumitv/index.html">pyanimeinfo.bangumitv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../config/index.html">pyanimeinfo.config</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">pyanimeinfo.utils</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="download.html">pyanimeinfo.utils.download</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enum.html">pyanimeinfo.utils.enum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="session.html">pyanimeinfo.utils.session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tqdm_.html">pyanimeinfo.utils.tqdm_</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -140,13 +146,13 @@
     
       <li><a href="../../index.html">Docs</a> &raquo;</li>
         
-      <li>Installation</li>
+      <li>pyanimeinfo.utils</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/tutorials/installation/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/api_doc/utils/index.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -161,39 +167,30 @@
             
     
     
-  <section id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">pyanimeinfo</span></code> is currently hosted on PyPI. It required python &gt;= 3.7.</p>
-<p>You can simply install pyanimeinfo from PyPI with the following command:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pyanimeinfo
-</pre></div>
+  <section id="module-pyanimeinfo.utils">
+<span id="pyanimeinfo-utils"></span><h1>pyanimeinfo.utils<a class="headerlink" href="#module-pyanimeinfo.utils" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="download.html">pyanimeinfo.utils.download</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="download.html#download-file">download_file</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="enum.html">pyanimeinfo.utils.enum</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="enum.html#load-from-enum">load_from_enum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enum.html#load-text-from-enum">load_text_from_enum</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="session.html">pyanimeinfo.utils.session</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="session.html#get-session">get_session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="session.html#configure-http-backend">configure_http_backend</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tqdm_.html">pyanimeinfo.utils.tqdm_</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tqdm_.html#tqdm">tqdm</a></li>
+</ul>
+</li>
+</ul>
 </div>
-<p>You can also install with the newest version through GitHub:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>git+https://github.com/deepghs/pyanimeinfo.git@main
-</pre></div>
-</div>
-<p>After installation, run this python code, and version information of <code class="docutils literal notranslate"><span class="pre">pyanimeinfo</span></code> should be shown.</p>
-<div class="highlight-python notranslate"><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><span class="kn">from</span> <span class="nn">pyanimeinfo.config.meta</span> <span class="kn">import</span> <span class="n">__TITLE__</span><span class="p">,</span> <span class="n">__VERSION__</span><span class="p">,</span> <span class="n">__AUTHOR__</span><span class="p">,</span> <span class="n">__DESCRIPTION__</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">__TITLE__</span><span class="p">,</span> <span class="n">__VERSION__</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">__DESCRIPTION__</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Powered by&#39;</span><span class="p">,</span> <span class="n">__AUTHOR__</span><span class="p">)</span>
-</pre></div></td></tr></table></div>
-</div>
-<div class="highlight-text notranslate"><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span>pyanimeinfo 0.0.1
-Python anime information grabber.
-Powered by narugo1992
-</pre></div></td></tr></table></div>
-</div>
-<p>pyanimeinfo is still under development, you can also check out the documents in stable version through <a class="reference external" href="https://deepghs.github.io/pyanimeinfo/">https://deepghs.github.io/pyanimeinfo/</a>.</p>
 </section>
 
 
@@ -205,10 +202,10 @@ Powered by narugo1992
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../api_doc/bangumitv/index.html" class="btn btn-neutral float-right" title="pyanimeinfo.bangumitv" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="download.html" class="btn btn-neutral float-right" title="pyanimeinfo.utils.download" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../../index.html" class="btn btn-neutral float-left" title="Welcome to pyanimeinfo’s Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../config/meta.html" class="btn btn-neutral float-left" title="pyanimeinfo.config.meta" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -1,0 +1,468 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyanimeinfo.bangumitv.client &mdash; pyanimeinfo 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="pyanimeinfo.bangumitv.enums" href="enums.html" />
+    <link rel="prev" title="pyanimeinfo.bangumitv" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> pyanimeinfo
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/installation/index.html">Installation</a></li>
+</ul>
+<p><span class="caption-text">API Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">pyanimeinfo.bangumitv</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">pyanimeinfo.bangumitv.client</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#bangumitvclient">BangumiTVClient</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enums.html">pyanimeinfo.bangumitv.enums</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html">pyanimeinfo.bangumitv.exceptions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../config/index.html">pyanimeinfo.config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils/index.html">pyanimeinfo.utils</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pyanimeinfo</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">pyanimeinfo.bangumitv</a> &raquo;</li>
+        
+      <li>pyanimeinfo.bangumitv.client</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/api_doc/bangumitv/client.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+    
+    
+  <section id="module-pyanimeinfo.bangumitv.client">
+<span id="pyanimeinfo-bangumitv-client"></span><h1>pyanimeinfo.bangumitv.client<a class="headerlink" href="#module-pyanimeinfo.bangumitv.client" title="Permalink to this headline">¶</a></h1>
+<section id="bangumitvclient">
+<h2>BangumiTVClient<a class="headerlink" href="#bangumitvclient" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="pyanimeinfo.bangumitv.client.BangumiTVClient">
+<em class="property">class </em><code class="sig-prename descclassname">pyanimeinfo.bangumitv.client.</code><code class="sig-name descname">BangumiTVClient</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">session</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>requests.Session<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">website</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/bangumitv/client.html#BangumiTVClient"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyanimeinfo.bangumitv.client.BangumiTVClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>A client class for accessing the Bangumi.tv API.</p>
+<p>The <cite>BangumiTVClient</cite> class provides methods for interacting with the Bangumi.tv API, allowing you to search for subjects, retrieve information about subjects, characters, persons, and more.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>session</strong> (<em>Optional</em><em>[</em><em>requests.Session</em><em>]</em>) – An optional <cite>requests.Session</cite> object to be used for making HTTP requests.</p></li>
+<li><p><strong>website</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – The base URL of the Bangumi.tv API. Default is <code class="docutils literal notranslate"><span class="pre">https://api.bgm.tv</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="pyanimeinfo.bangumitv.client.BangumiTVClient.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">session</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>requests.Session<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">website</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/bangumitv/client.html#BangumiTVClient.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyanimeinfo.bangumitv.client.BangumiTVClient.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyanimeinfo.bangumitv.client.BangumiTVClient.get_character">
+<code class="sig-name descname">get_character</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">character_id</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/bangumitv/client.html#BangumiTVClient.get_character"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyanimeinfo.bangumitv.client.BangumiTVClient.get_character" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get information about a specific character.</p>
+<p>This method retrieves information about a character on Bangumi.tv based on the provided character ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>character_id</strong> (<em>int</em>) – The ID of the character.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Information about the character as a JSON response.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyanimeinfo.bangumitv.client.BangumiTVClient.get_character_related_persons">
+<code class="sig-name descname">get_character_related_persons</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">character_id</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/bangumitv/client.html#BangumiTVClient.get_character_related_persons"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyanimeinfo.bangumitv.client.BangumiTVClient.get_character_related_persons" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get information about persons related to a specific character.</p>
+<p>This method retrieves information about persons related to a character on Bangumi.tv based on the provided character ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>character_id</strong> (<em>int</em>) – The ID of the character.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Information about persons related to the character as a JSON response.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyanimeinfo.bangumitv.client.BangumiTVClient.get_character_related_subjects">
+<code class="sig-name descname">get_character_related_subjects</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">character_id</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/bangumitv/client.html#BangumiTVClient.get_character_related_subjects"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyanimeinfo.bangumitv.client.BangumiTVClient.get_character_related_subjects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get information about subjects related to a specific character.</p>
+<p>This method retrieves information about subjects related to a character on Bangumi.tv based on the provided character ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>character_id</strong> (<em>int</em>) – The ID of the character.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Information about subjects related to the character as a JSON response.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyanimeinfo.bangumitv.client.BangumiTVClient.get_person">
+<code class="sig-name descname">get_person</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">person_id</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/bangumitv/client.html#BangumiTVClient.get_person"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyanimeinfo.bangumitv.client.BangumiTVClient.get_person" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get information about a specific person.</p>
+<p>This method retrieves information about a person on Bangumi.tv based on the provided person ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>person_id</strong> (<em>int</em>) – The ID of the person.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Information about the person as a JSON response.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyanimeinfo.bangumitv.client.BangumiTVClient.get_person_related_characters">
+<code class="sig-name descname">get_person_related_characters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">person_id</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/bangumitv/client.html#BangumiTVClient.get_person_related_characters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyanimeinfo.bangumitv.client.BangumiTVClient.get_person_related_characters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get information about characters related to a specific person.</p>
+<p>This method retrieves information about characters related to a person on Bangumi.tv based on the provided person ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>person_id</strong> (<em>int</em>) – The ID of the person.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Information about characters related to the person as a JSON response.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyanimeinfo.bangumitv.client.BangumiTVClient.get_person_related_subjects">
+<code class="sig-name descname">get_person_related_subjects</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">person_id</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/bangumitv/client.html#BangumiTVClient.get_person_related_subjects"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyanimeinfo.bangumitv.client.BangumiTVClient.get_person_related_subjects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get information about subjects related to a specific person.</p>
+<p>This method retrieves information about subjects related to a person on Bangumi.tv based on the provided person ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>person_id</strong> (<em>int</em>) – The ID of the person.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Information about subjects related to the person as a JSON response.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyanimeinfo.bangumitv.client.BangumiTVClient.get_subject">
+<code class="sig-name descname">get_subject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subject_id</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/bangumitv/client.html#BangumiTVClient.get_subject"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyanimeinfo.bangumitv.client.BangumiTVClient.get_subject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get information about a specific subject.</p>
+<p>This method retrieves information about a subject on Bangumi.tv based on the provided subject ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>subject_id</strong> (<em>int</em>) – The ID of the subject.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Information about the subject as a JSON response.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyanimeinfo.bangumitv.client.BangumiTVClient.get_subject_characters">
+<code class="sig-name descname">get_subject_characters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subject_id</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/bangumitv/client.html#BangumiTVClient.get_subject_characters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyanimeinfo.bangumitv.client.BangumiTVClient.get_subject_characters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get information about characters related to a specific subject.</p>
+<p>This method retrieves information about characters related to a subject on Bangumi.tv based on the provided subject ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>subject_id</strong> (<em>int</em>) – The ID of the subject.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Information about characters related to the subject as a JSON response.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyanimeinfo.bangumitv.client.BangumiTVClient.get_subject_persons">
+<code class="sig-name descname">get_subject_persons</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subject_id</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/bangumitv/client.html#BangumiTVClient.get_subject_persons"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyanimeinfo.bangumitv.client.BangumiTVClient.get_subject_persons" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get information about persons related to a specific subject.</p>
+<p>This method retrieves information about persons related to a subject on Bangumi.tv based on the provided subject ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>subject_id</strong> (<em>int</em>) – The ID of the subject.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Information about persons related to the subject as a JSON response.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyanimeinfo.bangumitv.client.BangumiTVClient.get_subject_relations">
+<code class="sig-name descname">get_subject_relations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subject_id</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/bangumitv/client.html#BangumiTVClient.get_subject_relations"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyanimeinfo.bangumitv.client.BangumiTVClient.get_subject_relations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get information about related subjects to a specific subject.</p>
+<p>This method retrieves information about subjects related to a subject on Bangumi.tv based on the provided subject ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>subject_id</strong> (<em>int</em>) – The ID of the subject.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Information about related subjects as a JSON response.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyanimeinfo.bangumitv.client.BangumiTVClient.search_subjects">
+<code class="sig-name descname">search_subjects</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">keywords</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">type_</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span><a class="reference internal" href="enums.html#pyanimeinfo.bangumitv.enums.SubjectType" title="pyanimeinfo.bangumitv.enums.SubjectType">pyanimeinfo.bangumitv.enums.SubjectType</a><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">response_group</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Literal<span class="p">[</span>small<span class="p">, </span>medium<span class="p">, </span>large<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">offset</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">limit</span><span class="p">:</span> <span class="n">int</span> <span class="o">=</span> <span class="default_value">25</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/bangumitv/client.html#BangumiTVClient.search_subjects"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyanimeinfo.bangumitv.client.BangumiTVClient.search_subjects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search for subjects on Bangumi.tv.</p>
+<p>This method allows you to search for subjects on Bangumi.tv based on provided keywords and optional search parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>keywords</strong> (<em>str</em>) – The search keywords.</p></li>
+<li><p><strong>type</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="enums.html#pyanimeinfo.bangumitv.enums.SubjectType" title="pyanimeinfo.bangumitv.enums.SubjectType"><em>SubjectType</em></a><em>]</em>) – The type of the subject (e.g., anime, manga).</p></li>
+<li><p><strong>response_group</strong> (<em>Optional</em><em>[</em><em>Literal</em><em>[</em><em>'small'</em><em>, </em><em>'medium'</em><em>, </em><em>'large'</em><em>]</em><em>]</em>) – The response group size (small, medium, large).</p></li>
+<li><p><strong>offset</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – The offset for the search results (pagination).</p></li>
+<li><p><strong>limit</strong> (<em>int</em>) – The maximum number of results to return.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The search results as a JSON response.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="enums.html" class="btn btn-neutral float-right" title="pyanimeinfo.bangumitv.enums" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="pyanimeinfo.bangumitv" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023, narugo1992
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+    <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: main
+    <span class="fa fa-caret-down"></span>
+  </span>
+        <div class="rst-other-versions">
+                <dl>
+                    <dt>Branches</dt>
+                        <dd><a href="client.html">main</a></dd>
+                </dl>
+        </div>
+    </div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
