@@ -1,7 +1,7 @@
 Installation
 ===================
 
-``pyanimeinfo`` is currently hosted on PyPI. It required python >= 3.7.
+``pyanimeinfo`` is currently hosted on PyPI. It required python >= 3.8.
 
 You can simply install pyanimeinfo from PyPI with the following command:
 
