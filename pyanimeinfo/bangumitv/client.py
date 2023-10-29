@@ -74,20 +74,20 @@ class BangumiTVClient:
     def get_subject_relations(self, subject_id: int):
         return self._get(f'/v0/subjects/{subject_id}/subjects')
 
-    def get_character(self, character_id):
+    def get_character(self, character_id: int):
         return self._get(f'/v0/characters/{character_id}')
 
-    def get_character_related_persons(self, character_id):
+    def get_character_related_persons(self, character_id: int):
         return self._get(f'/v0/characters/{character_id}/persons')
 
-    def get_character_related_subjects(self, character_id):
+    def get_character_related_subjects(self, character_id: int):
         return self._get(f'/v0/characters/{character_id}/subjects')
 
-    def get_person(self, person_id):
+    def get_person(self, person_id: int):
         return self._get(f'/v0/persons/{person_id}')
 
-    def get_person_related_subjects(self, person_id):
+    def get_person_related_subjects(self, person_id: int):
         return self._get(f'/v0/persons/{person_id}/subjects')
 
-    def get_person_related_characters(self, person_id):
+    def get_person_related_characters(self, person_id: int):
         return self._get(f'/v0/persons/{person_id}/characters')
