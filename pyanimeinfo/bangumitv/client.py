@@ -17,7 +17,10 @@ class BangumiTVClient:
     def __init__(self, session: Optional[requests.Session] = None,
                  website: Optional[str] = None):
         self._session = session or get_session()
-        self._session.headers.update({'User-Agent': 'deepghs/pyanimeinfo'})
+        self._session.headers.update({
+            'User-Agent': 'deepghs/pyanimeinfo',
+            'Accept': 'application/json',
+        })
         self._website = website or _BANGUMITV_WEBSITE
 
     @classmethod
