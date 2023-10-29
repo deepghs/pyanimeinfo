@@ -21,6 +21,7 @@ The `pyanimeinfo` framework provides a user-friendly set of resources for mirror
     :maxdepth: 2
     :caption: API Documentation
 
+    api_doc/bangumitv/index
     api_doc/config/index
     api_doc/utils/index
 
