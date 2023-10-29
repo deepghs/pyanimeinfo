@@ -162,3 +162,35 @@ class TestBangumitvClient:
                 found_2585 = True
                 break
         assert found_2585, 'Must have subject 2585.'
+
+    @responses.activate
+    def test_get_person(self, client, bangumitv_person):
+        data = client.get_person(4670)
+        assert data['id'] == 4670
+        assert data['name'] == '佐藤利奈'
+        assert data['gender'] == 'female'
+        assert data['birth_year'] == 1981
+        assert data['birth_mon'] == 5
+        assert data['birth_day'] == 2
+
+    @responses.activate
+    def test_get_person_related_characters(self, client, bangumitv_person):
+        data = client.get_person_related_characters(4670)
+        has_misaka_mikoto = False
+        for item in data:
+            if item['name'] == '御坂美琴':
+                has_misaka_mikoto = True
+                break
+
+        assert has_misaka_mikoto, 'Must have misaka mikoto.'
+
+    @responses.activate
+    def test_get_person_related_subjects(self, client, bangumitv_person):
+        data = client.get_person_related_subjects(4670)
+        has_railgun = False
+        for item in data:
+            if 'とある科学の超電磁砲' in item['name']:
+                has_railgun = True
+                break
+
+        assert has_railgun, 'Must have anime railgun.'

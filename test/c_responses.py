@@ -10,6 +10,12 @@ def bangumitv_character():
 
 
 @pytest.fixture()
+def bangumitv_person():
+    with mock_responses_from_hf('bangumitv_person'):
+        yield
+
+
+@pytest.fixture()
 def bangumitv_search():
     with mock_responses_from_hf('bangumitv_search'):
         yield

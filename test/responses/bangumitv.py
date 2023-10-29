@@ -34,3 +34,11 @@ def bangumitv_character():
     _ = client.get_character(3575)
     _ = client.get_character_related_persons(3575)
     _ = client.get_character_related_subjects(3575)
+
+
+@resp_recorder()
+def bangumitv_person():
+    client = BangumiTVClient()
+    _ = client.get_person(4670)
+    _ = client.get_person_related_characters(4670)
+    _ = client.get_person_related_subjects(4670)
