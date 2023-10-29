@@ -65,3 +65,13 @@ client.get_character_related_subjects(3575)
 client.get_person(4670)
 ```
 
+## Important Notes
+
+1. The `pyanimeinfo` library is primarily designed for querying anime-related information and is not a full-fledged
+   client for bangumi.tv or any other website. Therefore, we won't be considering support for operations like user
+   authentication and user sessions in the short term. Please understand.
+
+2. The reason this library is not named `pybangumitv` is that we don't intend to integrate only the bangumi.tv website.
+   In the future, we plan to introduce support for more websites, such as myanimelist, fandom, and others. Stay tuned
+   for updates.
+
