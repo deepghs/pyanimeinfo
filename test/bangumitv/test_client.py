@@ -1,7 +1,8 @@
 import pytest
 import responses
 
-from pyanimeinfo.bangumitv import BangumiTVClient, SubjectType, BangumiTVPageError, BangumiTVAPIError
+from pyanimeinfo.bangumitv import BangumiTVClient, SubjectType, BangumiTVPageError, BangumiTVAPIError, CharacterType, \
+    PersonType
 
 
 @pytest.fixture()
@@ -134,3 +135,30 @@ class TestBangumitvClient:
             assert 'name_cn' in item
             assert 'relation' in item
             assert 'type' in item
+
+    @responses.activate
+    def test_get_character(self, client, bangumitv_character):
+        data = client.get_character(3575)
+        assert data['name'] == '御坂美琴'
+        assert data['id'] == 3575
+        assert data['type'] == CharacterType.CHARACTER
+
+    @responses.activate
+    def test_get_character_related_persons(self, client, bangumitv_character):
+        data = client.get_character_related_persons(3575)
+        assert data[0]['id'] == 4670
+        assert data[0]['name'] == '佐藤利奈'
+        assert data[0]['type'] == PersonType.INDIVIDUAL
+
+    @responses.activate
+    def test_get_character_related_subjects(self, client, bangumitv_character):
+        data = client.get_character_related_subjects(3575)
+        assert isinstance(data, list)
+        assert len(data) == 36
+
+        found_2585 = False
+        for item in data:
+            if item['id'] == 2585:
+                found_2585 = True
+                break
+        assert found_2585, 'Must have subject 2585.'

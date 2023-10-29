@@ -4,6 +4,12 @@ from .responses import mock_responses_from_hf
 
 
 @pytest.fixture()
+def bangumitv_character():
+    with mock_responses_from_hf('bangumitv_character'):
+        yield
+
+
+@pytest.fixture()
 def bangumitv_search():
     with mock_responses_from_hf('bangumitv_search'):
         yield
