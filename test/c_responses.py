@@ -31,3 +31,9 @@ def bangumitv_subject():
 def download_file():
     with mock_responses_from_hf('download_file'):
         yield
+
+
+@pytest.fixture()
+def jikanv4_search_anime():
+    with mock_responses_from_hf('jikanv4_search_anime'):
+        yield
