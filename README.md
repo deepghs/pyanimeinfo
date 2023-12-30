@@ -33,7 +33,9 @@ to [Installation](https://deepghs.github.io/pyanimeinfo/main/tutorials/installat
 
 ## Quick Start
 
-### Accessing Information from bangumi.tv
+### Accessing Information from Bangumi.tv
+
+We can retrieve information from [Bangumi.tv](https://bangumi.tv/).
 
 ```python
 from pyanimeinfo.bangumitv import BangumiTVClient
@@ -65,13 +67,53 @@ client.get_character_related_subjects(3575)
 client.get_person(4670)
 ```
 
+### Accessing Information from MyAnimeList.net
+
+We can access information from [MyAnimeList](https://myanimelist.net/). However, since the original MyAnimeList site
+does not provide a useful API, we utilize the unofficial API [Jikan V4](https://jikan.moe/) to retrieve data from
+MyAnimeList.
+
+```python
+from pyanimeinfo.myanimelist import JikanV4Client
+
+client = JikanV4Client()
+
+# search animes
+client.search_anime('Railgun')
+
+# get specific anime
+client.get_anime(6213)
+
+# get full information of specific anime
+client.get_anime_full(6213)
+
+# get characters in specific anime
+client.get_anime_characters(6213)
+
+# search characters
+client.search_anime('misaka mikoto')
+
+# get specific character
+client.get_character(13701)
+
+# get full information of specific character
+client.get_character_full(13701)
+
+# get character related information
+client.get_character_related_animes(13701)
+client.get_character_related_manga(13701)
+client.get_character_voice_actors(13701)
+client.get_character_pictures(13701)
+
+```
+
 ## Important Notes
 
-1. The `pyanimeinfo` library is primarily designed for querying anime-related information and is not a full-fledged
-   client for bangumi.tv or any other website. Therefore, we won't be considering support for operations like user
-   authentication and user sessions in the short term. Please understand.
+1. The `pyanimeinfo` library is primarily designed for querying anime-related information and is not a comprehensive
+   client for bangumi.tv or any other website. Therefore, we currently do not plan to provide support for operations
+   like user authentication and user sessions in the short term. Your understanding is appreciated.
 
-2. The reason this library is not named `pybangumitv` is that we don't intend to integrate only the bangumi.tv website.
-   In the future, we plan to introduce support for more websites, such as myanimelist, fandom, and others. Stay tuned
-   for updates.
+2. The reason this library is not named `pybangumitv` is that our intention is not limited to integrating only the
+   bangumi.tv website. In the future, we aim to introduce support for additional websites, including MyAnimeList,
+   Fandom, and others. Stay tuned for updates.
 
