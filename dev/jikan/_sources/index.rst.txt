@@ -23,6 +23,7 @@ The `pyanimeinfo` framework provides a user-friendly set of resources for mirror
 
     api_doc/bangumitv/index
     api_doc/config/index
+    api_doc/myanimelist/index
     api_doc/utils/index
 
 

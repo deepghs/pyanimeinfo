@@ -1,0 +1,469 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pyanimeinfo.myanimelist.jikanv4 &mdash; pyanimeinfo 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="pyanimeinfo.utils" href="../utils/index.html" />
+    <link rel="prev" title="pyanimeinfo.myanimelist" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> pyanimeinfo
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/installation/index.html">Installation</a></li>
+</ul>
+<p><span class="caption-text">API Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../bangumitv/index.html">pyanimeinfo.bangumitv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../config/index.html">pyanimeinfo.config</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">pyanimeinfo.myanimelist</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">pyanimeinfo.myanimelist.jikanv4</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#jikanv4client">JikanV4Client</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../utils/index.html">pyanimeinfo.utils</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pyanimeinfo</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">pyanimeinfo.myanimelist</a> &raquo;</li>
+        
+      <li>pyanimeinfo.myanimelist.jikanv4</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/api_doc/myanimelist/jikanv4.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+    
+    
+  <section id="module-pyanimeinfo.myanimelist.jikanv4">
+<span id="pyanimeinfo-myanimelist-jikanv4"></span><h1>pyanimeinfo.myanimelist.jikanv4<a class="headerlink" href="#module-pyanimeinfo.myanimelist.jikanv4" title="Permalink to this headline">¶</a></h1>
+<section id="jikanv4client">
+<h2>JikanV4Client<a class="headerlink" href="#jikanv4client" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="pyanimeinfo.myanimelist.jikanv4.JikanV4Client">
+<em class="property">class </em><code class="sig-prename descclassname">pyanimeinfo.myanimelist.jikanv4.</code><code class="sig-name descname">JikanV4Client</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">session</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>requests.Session<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">website</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/myanimelist/jikanv4.html#JikanV4Client"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyanimeinfo.myanimelist.jikanv4.JikanV4Client" title="Permalink to this definition">¶</a></dt>
+<dd><p>Client for interacting with the Jikan API (v4) to retrieve anime and character information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>session</strong> (<em>Optional</em><em>[</em><em>requests.Session</em><em>]</em>) – Optional requests session. If not provided, a new session is created.</p></li>
+<li><p><strong>website</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Optional Jikan API website URL. Defaults to the official Jikan v4 API.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="pyanimeinfo.myanimelist.jikanv4.JikanV4Client.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">session</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>requests.Session<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">website</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/myanimelist/jikanv4.html#JikanV4Client.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyanimeinfo.myanimelist.jikanv4.JikanV4Client.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_anime">
+<code class="sig-name descname">get_anime</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">anime_id</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/myanimelist/jikanv4.html#JikanV4Client.get_anime"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_anime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get information about a specific anime by ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>anime_id</strong> (<em>int</em>) – ID of the anime.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Processed JSON data from the API response.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_anime_characters">
+<code class="sig-name descname">get_anime_characters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">anime_id</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/myanimelist/jikanv4.html#JikanV4Client.get_anime_characters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_anime_characters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get information about characters in a specific anime by ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>anime_id</strong> (<em>int</em>) – ID of the anime.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Processed JSON data from the API response.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_anime_full">
+<code class="sig-name descname">get_anime_full</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">anime_id</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/myanimelist/jikanv4.html#JikanV4Client.get_anime_full"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_anime_full" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get full information about a specific anime by ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>anime_id</strong> (<em>int</em>) – ID of the anime.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Processed JSON data from the API response.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_character">
+<code class="sig-name descname">get_character</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">character_id</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/myanimelist/jikanv4.html#JikanV4Client.get_character"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_character" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get information about a specific character by ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>character_id</strong> (<em>int</em>) – ID of the character.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Processed JSON data from the API response.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_character_full">
+<code class="sig-name descname">get_character_full</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">character_id</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/myanimelist/jikanv4.html#JikanV4Client.get_character_full"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_character_full" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get full information about a specific character by ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>character_id</strong> (<em>int</em>) – ID of the character.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Processed JSON data from the API response.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_character_pictures">
+<code class="sig-name descname">get_character_pictures</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">character_id</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/myanimelist/jikanv4.html#JikanV4Client.get_character_pictures"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_character_pictures" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get pictures of a specific character by ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>character_id</strong> (<em>int</em>) – ID of the character.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Processed JSON data from the API response.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_character_related_animes">
+<code class="sig-name descname">get_character_related_animes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">character_id</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/myanimelist/jikanv4.html#JikanV4Client.get_character_related_animes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_character_related_animes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get information about anime related to a specific character by ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>character_id</strong> (<em>int</em>) – ID of the character.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Processed JSON data from the API response.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_character_related_manga">
+<code class="sig-name descname">get_character_related_manga</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">character_id</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/myanimelist/jikanv4.html#JikanV4Client.get_character_related_manga"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_character_related_manga" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get information about manga related to a specific character by ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>character_id</strong> (<em>int</em>) – ID of the character.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Processed JSON data from the API response.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_character_voice_actors">
+<code class="sig-name descname">get_character_voice_actors</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">character_id</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/myanimelist/jikanv4.html#JikanV4Client.get_character_voice_actors"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_character_voice_actors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get information about voice actors for a specific character by ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>character_id</strong> (<em>int</em>) – ID of the character.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Processed JSON data from the API response.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyanimeinfo.myanimelist.jikanv4.JikanV4Client.search_anime">
+<code class="sig-name descname">search_anime</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">query</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">type_</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Literal<span class="p">[</span>tv<span class="p">, </span>movie<span class="p">, </span>ova<span class="p">, </span>special<span class="p">, </span>ona<span class="p">, </span>music<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">status</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Literal<span class="p">[</span>airing<span class="p">, </span>complete<span class="p">, </span>upcoming<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">rating</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Literal<span class="p">[</span>g<span class="p">, </span>pg<span class="p">, </span>pg13<span class="p">, </span>r17<span class="p">, </span>r<span class="p">, </span>rx<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">order_by</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Literal<span class="p">[</span>mal_id<span class="p">, </span>title<span class="p">, </span>start_date<span class="p">, </span>end_date<span class="p">, </span>episodes<span class="p">, </span>score<span class="p">, </span>scored_by<span class="p">, </span>rank<span class="p">, </span>popularity<span class="p">, </span>members<span class="p">, </span>favorites<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sort_</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Literal<span class="p">[</span>desc<span class="p">, </span>asc<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sfw</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="n">unapproved</span><span class="p">:</span> <span class="n">bool</span> <span class="o">=</span> <span class="default_value">False</span></em>, <em class="sig-param"><span class="n">start_date</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">end_date</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>str<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">page</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">limit</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/myanimelist/jikanv4.html#JikanV4Client.search_anime"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyanimeinfo.myanimelist.jikanv4.JikanV4Client.search_anime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search for anime on the Jikan API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>query</strong> (<em>str</em>) – Search query.</p></li>
+<li><p><strong>type</strong> (<em>Optional</em><em>[</em><em>Literal</em><em>[</em><em>&quot;tv&quot;</em><em>, </em><em>&quot;movie&quot;</em><em>, </em><em>&quot;ova&quot;</em><em>, </em><em>&quot;special&quot;</em><em>, </em><em>&quot;ona&quot;</em><em>, </em><em>&quot;music&quot;</em><em>]</em><em>]</em>) – Type of anime (e.g., “tv”, “movie”).</p></li>
+<li><p><strong>status</strong> (<em>Optional</em><em>[</em><em>Literal</em><em>[</em><em>&quot;airing&quot;</em><em>, </em><em>&quot;complete&quot;</em><em>, </em><em>&quot;upcoming&quot;</em><em>]</em><em>]</em>) – Anime status (e.g., “airing”, “complete”).</p></li>
+<li><p><strong>rating</strong> (<em>Optional</em><em>[</em><em>Literal</em><em>[</em><em>&quot;g&quot;</em><em>, </em><em>&quot;pg&quot;</em><em>, </em><em>&quot;pg13&quot;</em><em>, </em><em>&quot;r17&quot;</em><em>, </em><em>&quot;r&quot;</em><em>, </em><em>&quot;rx&quot;</em><em>]</em><em>]</em>) – Age rating of the anime.</p></li>
+<li><p><strong>order_by</strong> (<em>Optional</em><em>[</em><em>_SearchOrderByTyping</em><em>]</em>) – Attribute to order the results by.</p></li>
+<li><p><strong>sort</strong> (<em>Optional</em><em>[</em><em>Literal</em><em>[</em><em>&quot;desc&quot;</em><em>, </em><em>&quot;asc&quot;</em><em>]</em><em>]</em>) – Sort order (“desc” or “asc”).</p></li>
+<li><p><strong>sfw</strong> (<em>bool</em>) – Whether to include safe-for-work content.</p></li>
+<li><p><strong>unapproved</strong> (<em>bool</em>) – Whether to include unapproved content.</p></li>
+<li><p><strong>start_date</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Start date filter for anime.</p></li>
+<li><p><strong>end_date</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – End date filter for anime.</p></li>
+<li><p><strong>page</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – Page number for paginated results.</p></li>
+<li><p><strong>limit</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – Limit on the number of results per page.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Processed JSON data from the API response.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyanimeinfo.myanimelist.jikanv4.JikanV4Client.search_characters">
+<code class="sig-name descname">search_characters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">query</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">order_by</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Literal<span class="p">[</span>mal_id<span class="p">, </span>name<span class="p">, </span>favorites<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sort_</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Literal<span class="p">[</span>desc<span class="p">, </span>asc<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">page</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">limit</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>int<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/myanimelist/jikanv4.html#JikanV4Client.search_characters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyanimeinfo.myanimelist.jikanv4.JikanV4Client.search_characters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search for characters on the Jikan API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>query</strong> (<em>str</em>) – Search query.</p></li>
+<li><p><strong>order_by</strong> (<em>Optional</em><em>[</em><em>Literal</em><em>[</em><em>&quot;mal_id&quot;</em><em>, </em><em>&quot;name&quot;</em><em>, </em><em>&quot;favorites&quot;</em><em>]</em><em>]</em>) – Attribute to order the results by.</p></li>
+<li><p><strong>sort</strong> (<em>Optional</em><em>[</em><em>Literal</em><em>[</em><em>&quot;desc&quot;</em><em>, </em><em>&quot;asc&quot;</em><em>]</em><em>]</em>) – Sort order (“desc” or “asc”).</p></li>
+<li><p><strong>page</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – Page number for paginated results.</p></li>
+<li><p><strong>limit</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – Limit on the number of results per page.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Processed JSON data from the API response.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../utils/index.html" class="btn btn-neutral float-right" title="pyanimeinfo.utils" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="pyanimeinfo.myanimelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023, narugo1992
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+    <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: dev/jikan
+    <span class="fa fa-caret-down"></span>
+  </span>
+        <div class="rst-other-versions">
+                <dl>
+                    <dt>Branches</dt>
+                        <dd><a href="jikanv4.html">dev/jikan</a></dd>
+                        <dd><a href="../../../../main/index.html">main</a></dd>
+                </dl>
+        </div>
+    </div>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
