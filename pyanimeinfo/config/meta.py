@@ -7,7 +7,7 @@ Overview:
 __TITLE__ = 'pyanimeinfo'
 
 #: Version of this project.
-__VERSION__ = '0.0.1'
+__VERSION__ = '0.0.2'
 
 #: Short description of the project, will be included in ``setup.py``.
 __DESCRIPTION__ = 'Python anime information grabber.'
@@ -16,4 +16,4 @@ __DESCRIPTION__ = 'Python anime information grabber.'
 __AUTHOR__ = 'narugo1992'
 
 #: Email of the authors'.
-__AUTHOR_EMAIL__ = 'narugo@126.com'
+__AUTHOR_EMAIL__ = 'narugo992@gmail.com'

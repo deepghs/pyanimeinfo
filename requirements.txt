@@ -3,3 +3,4 @@ requests
 tqdm
 pyrfc6266
 pyquery
+lxml<5
