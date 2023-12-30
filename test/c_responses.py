@@ -34,6 +34,66 @@ def download_file():
 
 
 @pytest.fixture()
+def jikanv4_get_anime():
+    with mock_responses_from_hf('jikanv4_get_anime'):
+        yield
+
+
+@pytest.fixture()
+def jikanv4_get_anime_characters():
+    with mock_responses_from_hf('jikanv4_get_anime_characters'):
+        yield
+
+
+@pytest.fixture()
+def jikanv4_get_anime_full():
+    with mock_responses_from_hf('jikanv4_get_anime_full'):
+        yield
+
+
+@pytest.fixture()
+def jikanv4_get_character():
+    with mock_responses_from_hf('jikanv4_get_character'):
+        yield
+
+
+@pytest.fixture()
+def jikanv4_get_character_full():
+    with mock_responses_from_hf('jikanv4_get_character_full'):
+        yield
+
+
+@pytest.fixture()
+def jikanv4_get_character_pictures():
+    with mock_responses_from_hf('jikanv4_get_character_pictures'):
+        yield
+
+
+@pytest.fixture()
+def jikanv4_get_character_related_animes():
+    with mock_responses_from_hf('jikanv4_get_character_related_animes'):
+        yield
+
+
+@pytest.fixture()
+def jikanv4_get_character_related_manga():
+    with mock_responses_from_hf('jikanv4_get_character_related_manga'):
+        yield
+
+
+@pytest.fixture()
+def jikanv4_get_character_voice_actors():
+    with mock_responses_from_hf('jikanv4_get_character_voice_actors'):
+        yield
+
+
+@pytest.fixture()
 def jikanv4_search_anime():
     with mock_responses_from_hf('jikanv4_search_anime'):
+        yield
+
+
+@pytest.fixture()
+def jikanv4_search_characters():
+    with mock_responses_from_hf('jikanv4_search_characters'):
         yield
