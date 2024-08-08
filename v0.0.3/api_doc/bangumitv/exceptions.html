@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pyanimeinfo.bangumitv.exceptions &mdash; pyanimeinfo 0.0.3 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=65a4545c"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="pyanimeinfo.config" href="../config/index.html" />
+    <link rel="prev" title="pyanimeinfo.bangumitv.enums" href="enums.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            pyanimeinfo
+          </a>
+              <div class="version">
+                0.0.3
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorials/installation/index.html">Installation</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">pyanimeinfo.bangumitv</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="client.html">pyanimeinfo.bangumitv.client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enums.html">pyanimeinfo.bangumitv.enums</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">pyanimeinfo.bangumitv.exceptions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#bangumitverror">BangumiTVError</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pyanimeinfo.bangumitv.exceptions.BangumiTVError"><code class="docutils literal notranslate"><span class="pre">BangumiTVError</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#bangumitvapierror">BangumiTVAPIError</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pyanimeinfo.bangumitv.exceptions.BangumiTVAPIError"><code class="docutils literal notranslate"><span class="pre">BangumiTVAPIError</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#bangumitvpageerror">BangumiTVPageError</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pyanimeinfo.bangumitv.exceptions.BangumiTVPageError"><code class="docutils literal notranslate"><span class="pre">BangumiTVPageError</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../config/index.html">pyanimeinfo.config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../myanimelist/index.html">pyanimeinfo.myanimelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../utils/index.html">pyanimeinfo.utils</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">pyanimeinfo</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">pyanimeinfo.bangumitv</a></li>
+      <li class="breadcrumb-item active">pyanimeinfo.bangumitv.exceptions</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/api_doc/bangumitv/exceptions.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+    
+    
+  <section id="module-pyanimeinfo.bangumitv.exceptions">
+<span id="pyanimeinfo-bangumitv-exceptions"></span><h1>pyanimeinfo.bangumitv.exceptions<a class="headerlink" href="#module-pyanimeinfo.bangumitv.exceptions" title="Permalink to this heading"></a></h1>
+<section id="bangumitverror">
+<h2>BangumiTVError<a class="headerlink" href="#bangumitverror" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyanimeinfo.bangumitv.exceptions.BangumiTVError">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyanimeinfo.bangumitv.exceptions.</span></span><span class="sig-name descname"><span class="pre">BangumiTVError</span></span><a class="reference internal" href="../../_modules/pyanimeinfo/bangumitv/exceptions.html#BangumiTVError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyanimeinfo.bangumitv.exceptions.BangumiTVError" title="Permalink to this definition"></a></dt>
+<dd><p>Base exception class for Bangumi.tv API related errors.</p>
+<p>The <a class="reference internal" href="#pyanimeinfo.bangumitv.exceptions.BangumiTVError" title="pyanimeinfo.bangumitv.exceptions.BangumiTVError"><code class="xref py py-class docutils literal notranslate"><span class="pre">BangumiTVError</span></code></a> is the base exception class for all exceptions
+related to interactions with the Bangumi.tv API.</p>
+</dd></dl>
+
+</section>
+<section id="bangumitvapierror">
+<h2>BangumiTVAPIError<a class="headerlink" href="#bangumitvapierror" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyanimeinfo.bangumitv.exceptions.BangumiTVAPIError">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyanimeinfo.bangumitv.exceptions.</span></span><span class="sig-name descname"><span class="pre">BangumiTVAPIError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">status_code</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/bangumitv/exceptions.html#BangumiTVAPIError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyanimeinfo.bangumitv.exceptions.BangumiTVAPIError" title="Permalink to this definition"></a></dt>
+<dd><p>Exception for errors returned in JSON format from the Bangumi.tv API.</p>
+<p>The <a class="reference internal" href="#pyanimeinfo.bangumitv.exceptions.BangumiTVAPIError" title="pyanimeinfo.bangumitv.exceptions.BangumiTVAPIError"><code class="xref py py-class docutils literal notranslate"><span class="pre">BangumiTVAPIError</span></code></a> class represents exceptions that are returned in JSON format when the HTTP
+response status code is in the 4xx range. It typically includes information such as
+the HTTP status code, title, description, and details of the error.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>status_code</strong> (<em>int</em>) – The HTTP status code associated with the error.</p></li>
+<li><p><strong>title</strong> (<em>str</em>) – The title or summary of the error.</p></li>
+<li><p><strong>description</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – An optional description or additional information about the error.</p></li>
+<li><p><strong>details</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – An optional string providing further details about the error.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="bangumitvpageerror">
+<h2>BangumiTVPageError<a class="headerlink" href="#bangumitvpageerror" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyanimeinfo.bangumitv.exceptions.BangumiTVPageError">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyanimeinfo.bangumitv.exceptions.</span></span><span class="sig-name descname"><span class="pre">BangumiTVPageError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">status_code</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/bangumitv/exceptions.html#BangumiTVPageError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyanimeinfo.bangumitv.exceptions.BangumiTVPageError" title="Permalink to this definition"></a></dt>
+<dd><p>Exception for errors displayed on a Bangumi.tv web page.</p>
+<p>The <a class="reference internal" href="#pyanimeinfo.bangumitv.exceptions.BangumiTVPageError" title="pyanimeinfo.bangumitv.exceptions.BangumiTVPageError"><code class="xref py py-class docutils literal notranslate"><span class="pre">BangumiTVPageError</span></code></a> class represents exceptions that are displayed on a Bangumi.tv web page.
+It typically includes information such as the HTTP status code, title, and message for the error.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>status_code</strong> (<em>int</em>) – The HTTP status code associated with the error.</p></li>
+<li><p><strong>title</strong> (<em>str</em>) – The title or summary of the error.</p></li>
+<li><p><strong>message</strong> (<em>str</em>) – The detailed error message or description.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="enums.html" class="btn btn-neutral float-left" title="pyanimeinfo.bangumitv.enums" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../config/index.html" class="btn btn-neutral float-right" title="pyanimeinfo.config" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, narugo1992.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+    <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: v0.0.3
+    <span class="fa fa-caret-down"></span>
+  </span>
+        <div class="rst-other-versions">
+                <dl>
+                    <dt>Tags</dt>
+                        <dd><a href="../../../v0.0.2/api_doc/bangumitv/exceptions.html">v0.0.2</a></dd>
+                        <dd><a href="exceptions.html">v0.0.3</a></dd>
+                </dl>
+                <dl>
+                    <dt>Branches</dt>
+                        <dd><a href="../../../main/api_doc/bangumitv/exceptions.html">main</a></dd>
+                </dl>
+        </div>
+    </div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
