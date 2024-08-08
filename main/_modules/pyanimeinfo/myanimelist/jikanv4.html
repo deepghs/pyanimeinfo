@@ -107,14 +107,17 @@
 <span class="sd">    :type session: Optional[requests.Session]</span>
 <span class="sd">    :param website: Optional Jikan API website URL. Defaults to the official Jikan v4 API.</span>
 <span class="sd">    :type website: Optional[str]</span>
+<span class="sd">    :param user_agent: User agent to use in client. Defaults to `deepghs/pyanimeinfo`.</span>
+<span class="sd">                       Keep the original UA when assigned to empty value.</span>
+<span class="sd">    :type user_agent: Optional[str]</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="JikanV4Client.__init__"><a class="viewcode-back" href="../../../api_doc/myanimelist/jikanv4.html#pyanimeinfo.myanimelist.jikanv4.JikanV4Client.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">website</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="JikanV4Client.__init__"><a class="viewcode-back" href="../../../api_doc/myanimelist/jikanv4.html#pyanimeinfo.myanimelist.jikanv4.JikanV4Client.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">session</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">website</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">user_agent</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;deepghs/pyanimeinfo&#39;</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_session</span> <span class="o">=</span> <span class="n">session</span> <span class="ow">or</span> <span class="n">get_session</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
-            <span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;deepghs/pyanimeinfo&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;Accept&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
-        <span class="p">})</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;Accept&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">})</span>
+        <span class="k">if</span> <span class="n">user_agent</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="n">user_agent</span><span class="p">})</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_website</span> <span class="o">=</span> <span class="n">website</span> <span class="ow">or</span> <span class="n">_DEFAULT_JIKAN_V4_WEBSITE</span></div>
 
     <span class="nd">@classmethod</span>
@@ -381,7 +384,6 @@
                 </dl>
                 <dl>
                     <dt>Branches</dt>
-                        <dd><a href="../../../../dev/ua/index.html">dev/ua</a></dd>
                         <dd><a href="jikanv4.html">main</a></dd>
                 </dl>
         </div>
