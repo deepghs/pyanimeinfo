@@ -21,14 +21,17 @@ class JikanV4Client:
     :type session: Optional[requests.Session]
     :param website: Optional Jikan API website URL. Defaults to the official Jikan v4 API.
     :type website: Optional[str]
+    :param user_agent: User agent to use in client. Defaults to `deepghs/pyanimeinfo`.
+                       Keep the original UA when assigned to empty value.
+    :type user_agent: Optional[str]
     """
 
-    def __init__(self, session: Optional[requests.Session] = None, website: Optional[str] = None):
+    def __init__(self, session: Optional[requests.Session] = None, website: Optional[str] = None,
+                 user_agent: Optional[str] = 'deepghs/pyanimeinfo'):
         self._session = session or get_session()
-        self._session.headers.update({
-            'User-Agent': 'deepghs/pyanimeinfo',
-            'Accept': 'application/json',
-        })
+        self._session.headers.update({'Accept': 'application/json'})
+        if user_agent:
+            self._session.headers.update({'User-Agent': user_agent})
         self._website = website or _DEFAULT_JIKAN_V4_WEBSITE
 
     @classmethod
