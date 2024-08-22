@@ -463,6 +463,21 @@ class TestJikanv4Client:
         assert ei.value.response.status_code == 404
 
     @responses.activate
+    def test_get_anime_pictures(self, client, jikanv4_get_anime_pictures, image_diff):
+        imgs = client.get_anime_pictures(6213)
+        assert len(imgs) == 8
+        with isolated_directory():
+            for i, item in enumerate(imgs):
+                download_file(item['jpg']['image_url'], f'{i}-test.jpg')
+                # download_file(item['jpg']['image_url'], get_testfile('railgun_anime', f'{i}.jpg'))
+
+                assert image_diff(
+                    load_image(f'{i}-test.jpg'),
+                    load_image(get_testfile('railgun_anime', f'{i}.jpg')),
+                    throw_exception=False
+                ) <= 1e-2
+
+    @responses.activate
     def test_get_anime_characters(self, client, jikanv4_get_anime_characters):
         info = client.get_anime_characters(6213)
         lst = [(item['character']['mal_id'], item['character']['name']) for item in info]
@@ -663,3 +678,71 @@ class TestJikanv4Client:
                     load_image(get_testfile('misaka_mikoto', f'{i}.jpg')),
                     throw_exception=False
                 ) <= 1e-2
+
+    @responses.activate
+    def test_get_manga(self, client, jikanv4_get_manga):
+        info = client.get_manga(7776)
+        assert info['mal_id'] == 7776
+        assert info['title'] == 'Toaru Majutsu no Index Gaiden: Toaru Kagaku no Railgun'
+        assert info['title_english'] == 'A Certain Scientific Railgun'
+        assert info['title_japanese'] == 'とある魔術の禁書目録外伝 とある科学の超電磁砲〈レールガン〉'
+        assert info['titles'] == [
+            {'title': 'Toaru Majutsu no Index Gaiden: Toaru Kagaku no Railgun',
+             'type': 'Default'},
+            {'title': 'To Aru Kagaku no Choudenjihou', 'type': 'Synonym'},
+            {'title': 'とある魔術の禁書目録外伝 とある科学の超電磁砲〈レールガン〉', 'type': 'Japanese'},
+            {'title': 'A Certain Scientific Railgun', 'type': 'English'}
+        ]
+        assert 'relations' not in info
+
+    @responses.activate
+    def test_get_manga_full(self, client, jikanv4_get_manga_full):
+        info = client.get_manga_full(7776)
+        assert info['mal_id'] == 7776
+        assert info['title'] == 'Toaru Majutsu no Index Gaiden: Toaru Kagaku no Railgun'
+        assert info['title_english'] == 'A Certain Scientific Railgun'
+        assert info['title_japanese'] == 'とある魔術の禁書目録外伝 とある科学の超電磁砲〈レールガン〉'
+        assert info['titles'] == [
+            {'title': 'Toaru Majutsu no Index Gaiden: Toaru Kagaku no Railgun',
+             'type': 'Default'},
+            {'title': 'To Aru Kagaku no Choudenjihou', 'type': 'Synonym'},
+            {'title': 'とある魔術の禁書目録外伝 とある科学の超電磁砲〈レールガン〉', 'type': 'Japanese'},
+            {'title': 'A Certain Scientific Railgun', 'type': 'English'}
+        ]
+        assert 'relations' in info
+
+    @responses.activate
+    def test_get_manga_pictures(self, client, jikanv4_get_manga_pictures, image_diff):
+        imgs = client.get_manga_pictures(7776)
+        assert len(imgs) == 9
+        with isolated_directory():
+            for i, item in enumerate(imgs):
+                download_file(item['jpg']['image_url'], f'{i}-test.jpg')
+                # download_file(item['jpg']['image_url'], get_testfile('railgun_manga', f'{i}.jpg'))
+
+                assert image_diff(
+                    load_image(f'{i}-test.jpg'),
+                    load_image(get_testfile('railgun_manga', f'{i}.jpg')),
+                    throw_exception=False
+                ) <= 1e-2
+
+    @responses.activate
+    def test_search_manga(self, client, jikanv4_search_manga):
+        infos = client.search_manga('railgun')
+        assert len(infos) == 12
+        assert infos[0]['mal_id'] == 28973
+
+        info_selected = [ix for ix in infos if ix['mal_id'] == 7776]
+        assert info_selected, 'No manga 7776 found.'
+        info = info_selected[0]
+        assert info['mal_id'] == 7776
+        assert info['title'] == 'Toaru Majutsu no Index Gaiden: Toaru Kagaku no Railgun'
+        assert info['title_english'] == 'A Certain Scientific Railgun'
+        assert info['title_japanese'] == 'とある魔術の禁書目録外伝 とある科学の超電磁砲〈レールガン〉'
+        assert info['titles'] == [
+            {'title': 'Toaru Majutsu no Index Gaiden: Toaru Kagaku no Railgun',
+             'type': 'Default'},
+            {'title': 'To Aru Kagaku no Choudenjihou', 'type': 'Synonym'},
+            {'title': 'とある魔術の禁書目録外伝 とある科学の超電磁砲〈レールガン〉', 'type': 'Japanese'},
+            {'title': 'A Certain Scientific Railgun', 'type': 'English'}
+        ]
