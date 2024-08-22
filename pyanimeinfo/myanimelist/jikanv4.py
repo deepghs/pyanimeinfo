@@ -244,10 +244,18 @@ class JikanV4Client:
         """
         Get information about manga related to a specific character by ID.
 
+        This method retrieves a list of manga titles that feature the specified character.
+
         :param character_id: ID of the character.
         :type character_id: int
-        :return: Processed JSON data from the API response.
+        :return: Processed JSON data from the API response, containing information about related manga.
         :rtype: dict
+
+        :Example:
+
+        >>> client = JikanV4Client()
+        >>> related_manga = client.get_character_related_manga(1)
+        >>> print(related_manga)
         """
         return self._get(f'characters/{character_id}/manga')
 
@@ -255,10 +263,18 @@ class JikanV4Client:
         """
         Get information about voice actors for a specific character by ID.
 
+        This method retrieves a list of voice actors who have portrayed the specified character in various anime adaptations.
+
         :param character_id: ID of the character.
         :type character_id: int
-        :return: Processed JSON data from the API response.
+        :return: Processed JSON data from the API response, containing information about voice actors.
         :rtype: dict
+
+        :Example:
+
+        >>> client = JikanV4Client()
+        >>> voice_actors = client.get_character_voice_actors(1)
+        >>> print(voice_actors)
         """
         return self._get(f'characters/{character_id}/voices')
 
@@ -266,20 +282,76 @@ class JikanV4Client:
         """
         Get pictures of a specific character by ID.
 
+        This method retrieves a collection of images associated with the specified character.
+
         :param character_id: ID of the character.
         :type character_id: int
-        :return: Processed JSON data from the API response.
+        :return: Processed JSON data from the API response, containing links to character pictures.
         :rtype: dict
+
+        :Example:
+
+        >>> client = JikanV4Client()
+        >>> pictures = client.get_character_pictures(1)
+        >>> print(pictures)
         """
         return self._get(f'characters/{character_id}/pictures')
 
     def get_manga(self, manga_id: int):
+        """
+        Get basic information about a specific manga by ID.
+
+        This method retrieves basic details about the specified manga, such as title, author, and publication status.
+
+        :param manga_id: ID of the manga.
+        :type manga_id: int
+        :return: Processed JSON data from the API response, containing basic manga information.
+        :rtype: dict
+
+        :Example:
+
+        >>> client = JikanV4Client()
+        >>> manga_info = client.get_manga(1)
+        >>> print(manga_info)
+        """
         return self._get(f'manga/{manga_id}')
 
     def get_manga_full(self, manga_id: int):
+        """
+        Get full information about a specific manga by ID.
+
+        This method retrieves comprehensive details about the specified manga, including synopsis, characters, and more.
+
+        :param manga_id: ID of the manga.
+        :type manga_id: int
+        :return: Processed JSON data from the API response, containing full manga information.
+        :rtype: dict
+
+        :Example:
+
+        >>> client = JikanV4Client()
+        >>> manga_full_info = client.get_manga_full(1)
+        >>> print(manga_full_info)
+        """
         return self._get(f'manga/{manga_id}/full')
 
     def get_manga_pictures(self, manga_id: int):
+        """
+        Get pictures associated with a specific manga by ID.
+
+        This method retrieves a collection of images related to the specified manga, such as cover art and illustrations.
+
+        :param manga_id: ID of the manga.
+        :type manga_id: int
+        :return: Processed JSON data from the API response, containing links to manga pictures.
+        :rtype: dict
+
+        :Example:
+
+        >>> client = JikanV4Client()
+        >>> manga_pictures = client.get_manga_pictures(1)
+        >>> print(manga_pictures)
+        """
         return self._get(f'manga/{manga_id}/pictures')
 
     def search_manga(self, query: str,
@@ -298,74 +370,56 @@ class JikanV4Client:
                      genres_exclude: Optional[List[Union[int, str]]] = None,
                      start_date: Optional[str] = None, end_date: Optional[str] = None,
                      page: Optional[int] = None, limit: Optional[int] = None):
-        # unapproved
-        # boolean
-        # This is a flag. When supplied it will include entries which are unapproved. Unapproved entries on MyAnimeList are those that are user submitted and have not yet been approved by MAL to show up on other pages. They will have their own specifc pages and are often removed resulting in a 404 error. You do not need to pass a value to it. e.g usage: ?unapproved
-        #
-        # page
-        # integer
-        # limit
-        # integer
-        # q
-        # string
-        # type
-        # string (manga_search_query_type)
-        # Enum: "manga" "novel" "lightnovel" "oneshot" "doujin" "manhwa" "manhua"
-        # Available Manga types
-        #
-        # score
-        # number
-        # min_score
-        # number
-        # Set a minimum score for results.
-        #
-        # max_score
-        # number
-        # Set a maximum score for results
-        #
-        # status
-        # string (manga_search_query_status)
-        # Enum: "publishing" "complete" "hiatus" "discontinued" "upcoming"
-        # Available Manga statuses
-        #
-        # sfw
-        # boolean
-        # Filter out Adult entries
-        #
-        # genres
-        # string
-        # Filter by genre(s) IDs. Can pass multiple with a comma as a delimiter. e.g 1,2,3
-        #
-        # genres_exclude
-        # string
-        # Exclude genre(s) IDs. Can pass multiple with a comma as a delimiter. e.g 1,2,3
-        #
-        # order_by
-        # string (manga_search_query_orderby)
-        # Enum: "mal_id" "title" "start_date" "end_date" "chapters" "volumes" "score" "scored_by" "rank" "popularity" "members" "favorites"
-        # Available Manga order_by properties
-        #
-        # sort
-        # string (search_query_sort)
-        # Enum: "desc" "asc"
-        # Search query sort direction
-        #
-        # letter
-        # string
-        # Return entries starting with the given letter
-        #
-        # magazines
-        # string
-        # Filter by magazine(s) IDs. Can pass multiple with a comma as a delimiter. e.g 1,2,3
-        #
-        # start_date
-        # string
-        # Filter by starting date. Format: YYYY-MM-DD. e.g 2022, 2005-05, 2005-01-01
-        #
-        # end_date
-        # string
-        # Filter by ending date. Format: YYYY-MM-DD. e.g 2022, 2005-05, 2005-01-01
+        """
+        Search for manga based on various criteria.
 
+        This method allows for a comprehensive search of manga titles with multiple filtering options.
+
+        :param query: Search query string.
+        :type query: str
+        :param order_by: Property to order the results by.
+        :type order_by: Optional[Literal["mal_id", "title", "start_date", "end_date", "chapters", "volumes", "score", "scored_by", "rank", "popularity", "members", "favorites"]]
+        :param sort_: Sort direction for the results.
+        :type sort_: Optional[Literal["desc", "asc"]]
+        :param type_: Type of manga to search for.
+        :type type_: Optional[Literal["manga", "novel", "lightnovel", "oneshot", "doujin", "manhwa", "manhua"]]
+        :param unapproved: Include unapproved entries in the results.
+        :type unapproved: bool
+        :param score: Filter by exact score.
+        :type score: Optional[float]
+        :param min_score: Filter by minimum score.
+        :type min_score: Optional[float]
+        :param max_score: Filter by maximum score.
+        :type max_score: Optional[float]
+        :param status: Filter by publication status.
+        :type status: Optional[Literal["publishing", "complete", "hiatus", "discontinued", "upcoming"]]
+        :param sfw: Filter out adult content.
+        :type sfw: bool
+        :param letter: Filter by starting letter of the title.
+        :type letter: Optional[str]
+        :param magazines: Filter by magazine IDs.
+        :type magazines: Optional[List[Union[int, str]]]
+        :param genres: Filter by genre IDs.
+        :type genres: Optional[List[Union[int, str]]]
+        :param genres_exclude: Exclude specific genre IDs.
+        :type genres_exclude: Optional[List[Union[int, str]]]
+        :param start_date: Filter by start date (format: YYYY-MM-DD).
+        :type start_date: Optional[str]
+        :param end_date: Filter by end date (format: YYYY-MM-DD).
+        :type end_date: Optional[str]
+        :param page: Page number for pagination.
+        :type page: Optional[int]
+        :param limit: Number of results per page.
+        :type limit: Optional[int]
+        :return: Processed JSON data from the API response, containing search results.
+        :rtype: dict
+
+        :Example:
+
+        >>> client = JikanV4Client()
+        >>> search_results = client.search_manga("Naruto", order_by="popularity", sort_="desc", type_="manga", sfw=True)
+        >>> print(search_results)
+        """
         return self._get(
             'manga',
             params={
@@ -391,12 +445,60 @@ class JikanV4Client:
         )
 
     def get_people(self, people_id: int):
+        """
+        Get basic information about a specific person by ID.
+
+        This method retrieves basic details about the specified person, such as name and role in the anime/manga industry.
+
+        :param people_id: ID of the person.
+        :type people_id: int
+        :return: Processed JSON data from the API response, containing basic information about the person.
+        :rtype: dict
+
+        :Example:
+
+        >>> client = JikanV4Client()
+        >>> person_info = client.get_people(1)
+        >>> print(person_info)
+        """
         return self._get(f'people/{people_id}')
 
     def get_people_full(self, people_id: int):
+        """
+        Get full information about a specific person by ID.
+
+        This method retrieves comprehensive details about the specified person, including their works and biography.
+
+        :param people_id: ID of the person.
+        :type people_id: int
+        :return: Processed JSON data from the API response, containing full information about the person.
+        :rtype: dict
+
+        :Example:
+
+        >>> client = JikanV4Client()
+        >>> person_full_info = client.get_people_full(1)
+        >>> print(person_full_info)
+        """
         return self._get(f'people/{people_id}/full')
 
     def get_people_pictures(self, people_id: int):
+        """
+        Get pictures of a specific person by ID.
+
+        This method retrieves a collection of images associated with the specified person.
+
+        :param people_id: ID of the person.
+        :type people_id: int
+        :return: Processed JSON data from the API response, containing links to pictures of the person.
+        :rtype: dict
+
+        :Example:
+
+        >>> client = JikanV4Client()
+        >>> person_pictures = client.get_people_pictures(1)
+        >>> print(person_pictures)
+        """
         return self._get(f'people/{people_id}/pictures')
 
     def search_people(self, query: str,
@@ -404,25 +506,32 @@ class JikanV4Client:
                       sort_: Optional[Literal["desc", "asc"]] = None,
                       letter: Optional[str] = None,
                       page: Optional[int] = None, limit: Optional[int] = None):
-        # page
-        # integer
-        # limit
-        # integer
-        # q
-        # string
-        # order_by
-        # string (people_search_query_orderby)
-        # Enum: "mal_id" "name" "birthday" "favorites"
-        # Available People order_by properties
-        #
-        # sort
-        # string (search_query_sort)
-        # Enum: "desc" "asc"
-        # Search query sort direction
-        #
-        # letter
-        # string
-        # Return entries starting with the given letter
+        """
+        Search for people in the anime/manga industry based on various criteria.
+
+        This method allows for searching people such as voice actors, directors, and manga artists.
+
+        :param query: Search query string.
+        :type query: str
+        :param order_by: Property to order the results by.
+        :type order_by: Optional[Literal["mal_id", "name", "birthday", "favorites"]]
+        :param sort_: Sort direction for the results.
+        :type sort_: Optional[Literal["desc", "asc"]]
+        :param letter: Filter by starting letter of the name.
+        :type letter: Optional[str]
+        :param page: Page number for pagination.
+        :type page: Optional[int]
+        :param limit: Number of results per page.
+        :type limit: Optional[int]
+        :return: Processed JSON data from the API response, containing search results.
+        :rtype: dict
+
+        :Example:
+
+        >>> client = JikanV4Client()
+        >>> search_results = client.search_people("Miyazaki", order_by="favorites", sort_="desc")
+        >>> print(search_results)
+        """
         return self._get(
             'people',
             params={
