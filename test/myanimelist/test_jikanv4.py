@@ -746,3 +746,47 @@ class TestJikanv4Client:
             {'title': 'とある魔術の禁書目録外伝 とある科学の超電磁砲〈レールガン〉', 'type': 'Japanese'},
             {'title': 'A Certain Scientific Railgun', 'type': 'English'}
         ]
+
+    @responses.activate
+    def test_get_people(self, client, jikanv4_get_people):
+        info = client.get_people(241)
+        assert info['mal_id'] == 241
+        assert info['name'] == 'Rina Satou'
+        assert info['alternate_names'] == ['Suzune Asakura', '朝倉 鈴音']
+        assert 'voices' not in info
+
+    @responses.activate
+    def test_get_people_full(self, client, jikanv4_get_people_full):
+        info = client.get_people_full(241)
+        assert info['mal_id'] == 241
+        assert info['name'] == 'Rina Satou'
+        assert info['alternate_names'] == ['Suzune Asakura', '朝倉 鈴音']
+        assert 'voices' in info
+
+    @responses.activate
+    def test_get_people_pictures(self, client, jikanv4_get_people_pictures, image_diff):
+        imgs = client.get_people_pictures(241)
+        assert len(imgs) == 7
+        with isolated_directory():
+            for i, item in enumerate(imgs):
+                download_file(item['jpg']['image_url'], f'{i}-test.jpg')
+                # download_file(item['jpg']['image_url'], get_testfile('railgun_va', f'{i}.jpg'))
+
+                assert image_diff(
+                    load_image(f'{i}-test.jpg'),
+                    load_image(get_testfile('railgun_va', f'{i}.jpg')),
+                    throw_exception=False
+                ) <= 1e-2
+
+    @responses.activate
+    def test_search_people(self, client, jikanv4_search_people):
+        infos = client.search_people('Satou  Rina')
+        assert len(infos) == 25
+        assert infos[0]['mal_id'] == 241
+
+        info_selected = [ix for ix in infos if ix['mal_id'] == 241]
+        assert info_selected, 'No people 241 found.'
+        info = info_selected[0]
+        assert info['mal_id'] == 241
+        assert info['name'] == 'Rina Satou'
+        assert info['alternate_names'] == ['Suzune Asakura', '朝倉 鈴音']
