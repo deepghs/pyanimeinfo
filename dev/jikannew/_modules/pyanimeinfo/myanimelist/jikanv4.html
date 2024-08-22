@@ -240,7 +240,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;anime/</span><span class="si">{</span><span class="n">anime_id</span><span class="si">}</span><span class="s1">/full&#39;</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">get_anime_pictures</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">anime_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<div class="viewcode-block" id="JikanV4Client.get_anime_pictures"><a class="viewcode-back" href="../../../api_doc/myanimelist/jikanv4.html#pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_anime_pictures">[docs]</a>    <span class="k">def</span> <span class="nf">get_anime_pictures</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">anime_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get pictures information of a specific anime by ID.</span>
 
@@ -249,7 +249,7 @@
 <span class="sd">        :return: Processed JSON data for the API response.</span>
 <span class="sd">        :rtype: dict</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;anime/</span><span class="si">{</span><span class="n">anime_id</span><span class="si">}</span><span class="s1">/pictures&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;anime/</span><span class="si">{</span><span class="n">anime_id</span><span class="si">}</span><span class="s1">/pictures&#39;</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="JikanV4Client.get_anime_characters"><a class="viewcode-back" href="../../../api_doc/myanimelist/jikanv4.html#pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_anime_characters">[docs]</a>    <span class="k">def</span> <span class="nf">get_anime_characters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">anime_id</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -330,10 +330,18 @@
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get information about manga related to a specific character by ID.</span>
 
+<span class="sd">        This method retrieves a list of manga titles that feature the specified character.</span>
+
 <span class="sd">        :param character_id: ID of the character.</span>
 <span class="sd">        :type character_id: int</span>
-<span class="sd">        :return: Processed JSON data from the API response.</span>
+<span class="sd">        :return: Processed JSON data from the API response, containing information about related manga.</span>
 <span class="sd">        :rtype: dict</span>
+
+<span class="sd">        :Example:</span>
+
+<span class="sd">        &gt;&gt;&gt; client = JikanV4Client()</span>
+<span class="sd">        &gt;&gt;&gt; related_manga = client.get_character_related_manga(1)</span>
+<span class="sd">        &gt;&gt;&gt; print(related_manga)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;characters/</span><span class="si">{</span><span class="n">character_id</span><span class="si">}</span><span class="s1">/manga&#39;</span><span class="p">)</span></div>
 
@@ -341,10 +349,18 @@
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get information about voice actors for a specific character by ID.</span>
 
+<span class="sd">        This method retrieves a list of voice actors who have portrayed the specified character in various anime adaptations.</span>
+
 <span class="sd">        :param character_id: ID of the character.</span>
 <span class="sd">        :type character_id: int</span>
-<span class="sd">        :return: Processed JSON data from the API response.</span>
+<span class="sd">        :return: Processed JSON data from the API response, containing information about voice actors.</span>
 <span class="sd">        :rtype: dict</span>
+
+<span class="sd">        :Example:</span>
+
+<span class="sd">        &gt;&gt;&gt; client = JikanV4Client()</span>
+<span class="sd">        &gt;&gt;&gt; voice_actors = client.get_character_voice_actors(1)</span>
+<span class="sd">        &gt;&gt;&gt; print(voice_actors)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;characters/</span><span class="si">{</span><span class="n">character_id</span><span class="si">}</span><span class="s1">/voices&#39;</span><span class="p">)</span></div>
 
@@ -352,23 +368,79 @@
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get pictures of a specific character by ID.</span>
 
+<span class="sd">        This method retrieves a collection of images associated with the specified character.</span>
+
 <span class="sd">        :param character_id: ID of the character.</span>
 <span class="sd">        :type character_id: int</span>
-<span class="sd">        :return: Processed JSON data from the API response.</span>
+<span class="sd">        :return: Processed JSON data from the API response, containing links to character pictures.</span>
 <span class="sd">        :rtype: dict</span>
+
+<span class="sd">        :Example:</span>
+
+<span class="sd">        &gt;&gt;&gt; client = JikanV4Client()</span>
+<span class="sd">        &gt;&gt;&gt; pictures = client.get_character_pictures(1)</span>
+<span class="sd">        &gt;&gt;&gt; print(pictures)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;characters/</span><span class="si">{</span><span class="n">character_id</span><span class="si">}</span><span class="s1">/pictures&#39;</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">get_manga</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">manga_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;manga/</span><span class="si">{</span><span class="n">manga_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="JikanV4Client.get_manga"><a class="viewcode-back" href="../../../api_doc/myanimelist/jikanv4.html#pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_manga">[docs]</a>    <span class="k">def</span> <span class="nf">get_manga</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">manga_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get basic information about a specific manga by ID.</span>
 
-    <span class="k">def</span> <span class="nf">get_manga_full</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">manga_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;manga/</span><span class="si">{</span><span class="n">manga_id</span><span class="si">}</span><span class="s1">/full&#39;</span><span class="p">)</span>
+<span class="sd">        This method retrieves basic details about the specified manga, such as title, author, and publication status.</span>
 
-    <span class="k">def</span> <span class="nf">get_manga_pictures</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">manga_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;manga/</span><span class="si">{</span><span class="n">manga_id</span><span class="si">}</span><span class="s1">/pictures&#39;</span><span class="p">)</span>
+<span class="sd">        :param manga_id: ID of the manga.</span>
+<span class="sd">        :type manga_id: int</span>
+<span class="sd">        :return: Processed JSON data from the API response, containing basic manga information.</span>
+<span class="sd">        :rtype: dict</span>
 
-    <span class="k">def</span> <span class="nf">search_manga</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+<span class="sd">        :Example:</span>
+
+<span class="sd">        &gt;&gt;&gt; client = JikanV4Client()</span>
+<span class="sd">        &gt;&gt;&gt; manga_info = client.get_manga(1)</span>
+<span class="sd">        &gt;&gt;&gt; print(manga_info)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;manga/</span><span class="si">{</span><span class="n">manga_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="JikanV4Client.get_manga_full"><a class="viewcode-back" href="../../../api_doc/myanimelist/jikanv4.html#pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_manga_full">[docs]</a>    <span class="k">def</span> <span class="nf">get_manga_full</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">manga_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get full information about a specific manga by ID.</span>
+
+<span class="sd">        This method retrieves comprehensive details about the specified manga, including synopsis, characters, and more.</span>
+
+<span class="sd">        :param manga_id: ID of the manga.</span>
+<span class="sd">        :type manga_id: int</span>
+<span class="sd">        :return: Processed JSON data from the API response, containing full manga information.</span>
+<span class="sd">        :rtype: dict</span>
+
+<span class="sd">        :Example:</span>
+
+<span class="sd">        &gt;&gt;&gt; client = JikanV4Client()</span>
+<span class="sd">        &gt;&gt;&gt; manga_full_info = client.get_manga_full(1)</span>
+<span class="sd">        &gt;&gt;&gt; print(manga_full_info)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;manga/</span><span class="si">{</span><span class="n">manga_id</span><span class="si">}</span><span class="s1">/full&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="JikanV4Client.get_manga_pictures"><a class="viewcode-back" href="../../../api_doc/myanimelist/jikanv4.html#pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_manga_pictures">[docs]</a>    <span class="k">def</span> <span class="nf">get_manga_pictures</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">manga_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get pictures associated with a specific manga by ID.</span>
+
+<span class="sd">        This method retrieves a collection of images related to the specified manga, such as cover art and illustrations.</span>
+
+<span class="sd">        :param manga_id: ID of the manga.</span>
+<span class="sd">        :type manga_id: int</span>
+<span class="sd">        :return: Processed JSON data from the API response, containing links to manga pictures.</span>
+<span class="sd">        :rtype: dict</span>
+
+<span class="sd">        :Example:</span>
+
+<span class="sd">        &gt;&gt;&gt; client = JikanV4Client()</span>
+<span class="sd">        &gt;&gt;&gt; manga_pictures = client.get_manga_pictures(1)</span>
+<span class="sd">        &gt;&gt;&gt; print(manga_pictures)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;manga/</span><span class="si">{</span><span class="n">manga_id</span><span class="si">}</span><span class="s1">/pictures&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="JikanV4Client.search_manga"><a class="viewcode-back" href="../../../api_doc/myanimelist/jikanv4.html#pyanimeinfo.myanimelist.jikanv4.JikanV4Client.search_manga">[docs]</a>    <span class="k">def</span> <span class="nf">search_manga</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
                      <span class="n">order_by</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span>
                          <span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;mal_id&quot;</span><span class="p">,</span> <span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="s2">&quot;start_date&quot;</span><span class="p">,</span> <span class="s2">&quot;end_date&quot;</span><span class="p">,</span> <span class="s2">&quot;chapters&quot;</span><span class="p">,</span> <span class="s2">&quot;volumes&quot;</span><span class="p">,</span> <span class="s2">&quot;score&quot;</span><span class="p">,</span>
                          <span class="s2">&quot;scored_by&quot;</span><span class="p">,</span> <span class="s2">&quot;rank&quot;</span><span class="p">,</span> <span class="s2">&quot;popularity&quot;</span><span class="p">,</span> <span class="s2">&quot;members&quot;</span><span class="p">,</span> <span class="s2">&quot;favorites&quot;</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -384,74 +456,56 @@
                      <span class="n">genres_exclude</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                      <span class="n">start_date</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">end_date</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                      <span class="n">page</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-        <span class="c1"># unapproved</span>
-        <span class="c1"># boolean</span>
-        <span class="c1"># This is a flag. When supplied it will include entries which are unapproved. Unapproved entries on MyAnimeList are those that are user submitted and have not yet been approved by MAL to show up on other pages. They will have their own specifc pages and are often removed resulting in a 404 error. You do not need to pass a value to it. e.g usage: ?unapproved</span>
-        <span class="c1">#</span>
-        <span class="c1"># page</span>
-        <span class="c1"># integer</span>
-        <span class="c1"># limit</span>
-        <span class="c1"># integer</span>
-        <span class="c1"># q</span>
-        <span class="c1"># string</span>
-        <span class="c1"># type</span>
-        <span class="c1"># string (manga_search_query_type)</span>
-        <span class="c1"># Enum: &quot;manga&quot; &quot;novel&quot; &quot;lightnovel&quot; &quot;oneshot&quot; &quot;doujin&quot; &quot;manhwa&quot; &quot;manhua&quot;</span>
-        <span class="c1"># Available Manga types</span>
-        <span class="c1">#</span>
-        <span class="c1"># score</span>
-        <span class="c1"># number</span>
-        <span class="c1"># min_score</span>
-        <span class="c1"># number</span>
-        <span class="c1"># Set a minimum score for results.</span>
-        <span class="c1">#</span>
-        <span class="c1"># max_score</span>
-        <span class="c1"># number</span>
-        <span class="c1"># Set a maximum score for results</span>
-        <span class="c1">#</span>
-        <span class="c1"># status</span>
-        <span class="c1"># string (manga_search_query_status)</span>
-        <span class="c1"># Enum: &quot;publishing&quot; &quot;complete&quot; &quot;hiatus&quot; &quot;discontinued&quot; &quot;upcoming&quot;</span>
-        <span class="c1"># Available Manga statuses</span>
-        <span class="c1">#</span>
-        <span class="c1"># sfw</span>
-        <span class="c1"># boolean</span>
-        <span class="c1"># Filter out Adult entries</span>
-        <span class="c1">#</span>
-        <span class="c1"># genres</span>
-        <span class="c1"># string</span>
-        <span class="c1"># Filter by genre(s) IDs. Can pass multiple with a comma as a delimiter. e.g 1,2,3</span>
-        <span class="c1">#</span>
-        <span class="c1"># genres_exclude</span>
-        <span class="c1"># string</span>
-        <span class="c1"># Exclude genre(s) IDs. Can pass multiple with a comma as a delimiter. e.g 1,2,3</span>
-        <span class="c1">#</span>
-        <span class="c1"># order_by</span>
-        <span class="c1"># string (manga_search_query_orderby)</span>
-        <span class="c1"># Enum: &quot;mal_id&quot; &quot;title&quot; &quot;start_date&quot; &quot;end_date&quot; &quot;chapters&quot; &quot;volumes&quot; &quot;score&quot; &quot;scored_by&quot; &quot;rank&quot; &quot;popularity&quot; &quot;members&quot; &quot;favorites&quot;</span>
-        <span class="c1"># Available Manga order_by properties</span>
-        <span class="c1">#</span>
-        <span class="c1"># sort</span>
-        <span class="c1"># string (search_query_sort)</span>
-        <span class="c1"># Enum: &quot;desc&quot; &quot;asc&quot;</span>
-        <span class="c1"># Search query sort direction</span>
-        <span class="c1">#</span>
-        <span class="c1"># letter</span>
-        <span class="c1"># string</span>
-        <span class="c1"># Return entries starting with the given letter</span>
-        <span class="c1">#</span>
-        <span class="c1"># magazines</span>
-        <span class="c1"># string</span>
-        <span class="c1"># Filter by magazine(s) IDs. Can pass multiple with a comma as a delimiter. e.g 1,2,3</span>
-        <span class="c1">#</span>
-        <span class="c1"># start_date</span>
-        <span class="c1"># string</span>
-        <span class="c1"># Filter by starting date. Format: YYYY-MM-DD. e.g 2022, 2005-05, 2005-01-01</span>
-        <span class="c1">#</span>
-        <span class="c1"># end_date</span>
-        <span class="c1"># string</span>
-        <span class="c1"># Filter by ending date. Format: YYYY-MM-DD. e.g 2022, 2005-05, 2005-01-01</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Search for manga based on various criteria.</span>
 
+<span class="sd">        This method allows for a comprehensive search of manga titles with multiple filtering options.</span>
+
+<span class="sd">        :param query: Search query string.</span>
+<span class="sd">        :type query: str</span>
+<span class="sd">        :param order_by: Property to order the results by.</span>
+<span class="sd">        :type order_by: Optional[Literal[&quot;mal_id&quot;, &quot;title&quot;, &quot;start_date&quot;, &quot;end_date&quot;, &quot;chapters&quot;, &quot;volumes&quot;, &quot;score&quot;, &quot;scored_by&quot;, &quot;rank&quot;, &quot;popularity&quot;, &quot;members&quot;, &quot;favorites&quot;]]</span>
+<span class="sd">        :param sort_: Sort direction for the results.</span>
+<span class="sd">        :type sort_: Optional[Literal[&quot;desc&quot;, &quot;asc&quot;]]</span>
+<span class="sd">        :param type_: Type of manga to search for.</span>
+<span class="sd">        :type type_: Optional[Literal[&quot;manga&quot;, &quot;novel&quot;, &quot;lightnovel&quot;, &quot;oneshot&quot;, &quot;doujin&quot;, &quot;manhwa&quot;, &quot;manhua&quot;]]</span>
+<span class="sd">        :param unapproved: Include unapproved entries in the results.</span>
+<span class="sd">        :type unapproved: bool</span>
+<span class="sd">        :param score: Filter by exact score.</span>
+<span class="sd">        :type score: Optional[float]</span>
+<span class="sd">        :param min_score: Filter by minimum score.</span>
+<span class="sd">        :type min_score: Optional[float]</span>
+<span class="sd">        :param max_score: Filter by maximum score.</span>
+<span class="sd">        :type max_score: Optional[float]</span>
+<span class="sd">        :param status: Filter by publication status.</span>
+<span class="sd">        :type status: Optional[Literal[&quot;publishing&quot;, &quot;complete&quot;, &quot;hiatus&quot;, &quot;discontinued&quot;, &quot;upcoming&quot;]]</span>
+<span class="sd">        :param sfw: Filter out adult content.</span>
+<span class="sd">        :type sfw: bool</span>
+<span class="sd">        :param letter: Filter by starting letter of the title.</span>
+<span class="sd">        :type letter: Optional[str]</span>
+<span class="sd">        :param magazines: Filter by magazine IDs.</span>
+<span class="sd">        :type magazines: Optional[List[Union[int, str]]]</span>
+<span class="sd">        :param genres: Filter by genre IDs.</span>
+<span class="sd">        :type genres: Optional[List[Union[int, str]]]</span>
+<span class="sd">        :param genres_exclude: Exclude specific genre IDs.</span>
+<span class="sd">        :type genres_exclude: Optional[List[Union[int, str]]]</span>
+<span class="sd">        :param start_date: Filter by start date (format: YYYY-MM-DD).</span>
+<span class="sd">        :type start_date: Optional[str]</span>
+<span class="sd">        :param end_date: Filter by end date (format: YYYY-MM-DD).</span>
+<span class="sd">        :type end_date: Optional[str]</span>
+<span class="sd">        :param page: Page number for pagination.</span>
+<span class="sd">        :type page: Optional[int]</span>
+<span class="sd">        :param limit: Number of results per page.</span>
+<span class="sd">        :type limit: Optional[int]</span>
+<span class="sd">        :return: Processed JSON data from the API response, containing search results.</span>
+<span class="sd">        :rtype: dict</span>
+
+<span class="sd">        :Example:</span>
+
+<span class="sd">        &gt;&gt;&gt; client = JikanV4Client()</span>
+<span class="sd">        &gt;&gt;&gt; search_results = client.search_manga(&quot;Naruto&quot;, order_by=&quot;popularity&quot;, sort_=&quot;desc&quot;, type_=&quot;manga&quot;, sfw=True)</span>
+<span class="sd">        &gt;&gt;&gt; print(search_results)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span>
             <span class="s1">&#39;manga&#39;</span><span class="p">,</span>
             <span class="n">params</span><span class="o">=</span><span class="p">{</span>
@@ -474,41 +528,96 @@
                 <span class="s1">&#39;start_date&#39;</span><span class="p">:</span> <span class="n">start_date</span><span class="p">,</span>
                 <span class="s1">&#39;end_date&#39;</span><span class="p">:</span> <span class="n">end_date</span><span class="p">,</span>
             <span class="p">}</span>
-        <span class="p">)</span>
+        <span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="nf">get_people</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">people_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;people/</span><span class="si">{</span><span class="n">people_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="viewcode-block" id="JikanV4Client.get_people"><a class="viewcode-back" href="../../../api_doc/myanimelist/jikanv4.html#pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_people">[docs]</a>    <span class="k">def</span> <span class="nf">get_people</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">people_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get basic information about a specific person by ID.</span>
 
-    <span class="k">def</span> <span class="nf">get_people_full</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">people_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;people/</span><span class="si">{</span><span class="n">people_id</span><span class="si">}</span><span class="s1">/full&#39;</span><span class="p">)</span>
+<span class="sd">        This method retrieves basic details about the specified person, such as name and role in the anime/manga industry.</span>
 
-    <span class="k">def</span> <span class="nf">get_people_pictures</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">people_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;people/</span><span class="si">{</span><span class="n">people_id</span><span class="si">}</span><span class="s1">/pictures&#39;</span><span class="p">)</span>
+<span class="sd">        :param people_id: ID of the person.</span>
+<span class="sd">        :type people_id: int</span>
+<span class="sd">        :return: Processed JSON data from the API response, containing basic information about the person.</span>
+<span class="sd">        :rtype: dict</span>
 
-    <span class="k">def</span> <span class="nf">search_people</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+<span class="sd">        :Example:</span>
+
+<span class="sd">        &gt;&gt;&gt; client = JikanV4Client()</span>
+<span class="sd">        &gt;&gt;&gt; person_info = client.get_people(1)</span>
+<span class="sd">        &gt;&gt;&gt; print(person_info)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;people/</span><span class="si">{</span><span class="n">people_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="JikanV4Client.get_people_full"><a class="viewcode-back" href="../../../api_doc/myanimelist/jikanv4.html#pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_people_full">[docs]</a>    <span class="k">def</span> <span class="nf">get_people_full</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">people_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get full information about a specific person by ID.</span>
+
+<span class="sd">        This method retrieves comprehensive details about the specified person, including their works and biography.</span>
+
+<span class="sd">        :param people_id: ID of the person.</span>
+<span class="sd">        :type people_id: int</span>
+<span class="sd">        :return: Processed JSON data from the API response, containing full information about the person.</span>
+<span class="sd">        :rtype: dict</span>
+
+<span class="sd">        :Example:</span>
+
+<span class="sd">        &gt;&gt;&gt; client = JikanV4Client()</span>
+<span class="sd">        &gt;&gt;&gt; person_full_info = client.get_people_full(1)</span>
+<span class="sd">        &gt;&gt;&gt; print(person_full_info)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;people/</span><span class="si">{</span><span class="n">people_id</span><span class="si">}</span><span class="s1">/full&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="JikanV4Client.get_people_pictures"><a class="viewcode-back" href="../../../api_doc/myanimelist/jikanv4.html#pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_people_pictures">[docs]</a>    <span class="k">def</span> <span class="nf">get_people_pictures</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">people_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get pictures of a specific person by ID.</span>
+
+<span class="sd">        This method retrieves a collection of images associated with the specified person.</span>
+
+<span class="sd">        :param people_id: ID of the person.</span>
+<span class="sd">        :type people_id: int</span>
+<span class="sd">        :return: Processed JSON data from the API response, containing links to pictures of the person.</span>
+<span class="sd">        :rtype: dict</span>
+
+<span class="sd">        :Example:</span>
+
+<span class="sd">        &gt;&gt;&gt; client = JikanV4Client()</span>
+<span class="sd">        &gt;&gt;&gt; person_pictures = client.get_people_pictures(1)</span>
+<span class="sd">        &gt;&gt;&gt; print(person_pictures)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;people/</span><span class="si">{</span><span class="n">people_id</span><span class="si">}</span><span class="s1">/pictures&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="JikanV4Client.search_people"><a class="viewcode-back" href="../../../api_doc/myanimelist/jikanv4.html#pyanimeinfo.myanimelist.jikanv4.JikanV4Client.search_people">[docs]</a>    <span class="k">def</span> <span class="nf">search_people</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
                       <span class="n">order_by</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;mal_id&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;birthday&quot;</span><span class="p">,</span> <span class="s2">&quot;favorites&quot;</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                       <span class="n">sort_</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Literal</span><span class="p">[</span><span class="s2">&quot;desc&quot;</span><span class="p">,</span> <span class="s2">&quot;asc&quot;</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                       <span class="n">letter</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
                       <span class="n">page</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
-        <span class="c1"># page</span>
-        <span class="c1"># integer</span>
-        <span class="c1"># limit</span>
-        <span class="c1"># integer</span>
-        <span class="c1"># q</span>
-        <span class="c1"># string</span>
-        <span class="c1"># order_by</span>
-        <span class="c1"># string (people_search_query_orderby)</span>
-        <span class="c1"># Enum: &quot;mal_id&quot; &quot;name&quot; &quot;birthday&quot; &quot;favorites&quot;</span>
-        <span class="c1"># Available People order_by properties</span>
-        <span class="c1">#</span>
-        <span class="c1"># sort</span>
-        <span class="c1"># string (search_query_sort)</span>
-        <span class="c1"># Enum: &quot;desc&quot; &quot;asc&quot;</span>
-        <span class="c1"># Search query sort direction</span>
-        <span class="c1">#</span>
-        <span class="c1"># letter</span>
-        <span class="c1"># string</span>
-        <span class="c1"># Return entries starting with the given letter</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Search for people in the anime/manga industry based on various criteria.</span>
+
+<span class="sd">        This method allows for searching people such as voice actors, directors, and manga artists.</span>
+
+<span class="sd">        :param query: Search query string.</span>
+<span class="sd">        :type query: str</span>
+<span class="sd">        :param order_by: Property to order the results by.</span>
+<span class="sd">        :type order_by: Optional[Literal[&quot;mal_id&quot;, &quot;name&quot;, &quot;birthday&quot;, &quot;favorites&quot;]]</span>
+<span class="sd">        :param sort_: Sort direction for the results.</span>
+<span class="sd">        :type sort_: Optional[Literal[&quot;desc&quot;, &quot;asc&quot;]]</span>
+<span class="sd">        :param letter: Filter by starting letter of the name.</span>
+<span class="sd">        :type letter: Optional[str]</span>
+<span class="sd">        :param page: Page number for pagination.</span>
+<span class="sd">        :type page: Optional[int]</span>
+<span class="sd">        :param limit: Number of results per page.</span>
+<span class="sd">        :type limit: Optional[int]</span>
+<span class="sd">        :return: Processed JSON data from the API response, containing search results.</span>
+<span class="sd">        :rtype: dict</span>
+
+<span class="sd">        :Example:</span>
+
+<span class="sd">        &gt;&gt;&gt; client = JikanV4Client()</span>
+<span class="sd">        &gt;&gt;&gt; search_results = client.search_people(&quot;Miyazaki&quot;, order_by=&quot;favorites&quot;, sort_=&quot;desc&quot;)</span>
+<span class="sd">        &gt;&gt;&gt; print(search_results)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span>
             <span class="s1">&#39;people&#39;</span><span class="p">,</span>
             <span class="n">params</span><span class="o">=</span><span class="p">{</span>
@@ -519,7 +628,7 @@
                 <span class="s1">&#39;page&#39;</span><span class="p">:</span> <span class="n">page</span><span class="p">,</span>
                 <span class="s1">&#39;limit&#39;</span><span class="p">:</span> <span class="n">limit</span><span class="p">,</span>
             <span class="p">}</span>
-        <span class="p">)</span></div>
+        <span class="p">)</span></div></div>
 </pre></div>
 
 
