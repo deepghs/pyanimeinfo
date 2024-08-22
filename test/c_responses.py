@@ -52,6 +52,12 @@ def jikanv4_get_anime_full():
 
 
 @pytest.fixture()
+def jikanv4_get_anime_pictures():
+    with mock_responses_from_hf('jikanv4_get_anime_pictures'):
+        yield
+
+
+@pytest.fixture()
 def jikanv4_get_character():
     with mock_responses_from_hf('jikanv4_get_character'):
         yield
@@ -88,6 +94,42 @@ def jikanv4_get_character_voice_actors():
 
 
 @pytest.fixture()
+def jikanv4_get_manga():
+    with mock_responses_from_hf('jikanv4_get_manga'):
+        yield
+
+
+@pytest.fixture()
+def jikanv4_get_manga_full():
+    with mock_responses_from_hf('jikanv4_get_manga_full'):
+        yield
+
+
+@pytest.fixture()
+def jikanv4_get_manga_pictures():
+    with mock_responses_from_hf('jikanv4_get_manga_pictures'):
+        yield
+
+
+@pytest.fixture()
+def jikanv4_get_people():
+    with mock_responses_from_hf('jikanv4_get_people'):
+        yield
+
+
+@pytest.fixture()
+def jikanv4_get_people_full():
+    with mock_responses_from_hf('jikanv4_get_people_full'):
+        yield
+
+
+@pytest.fixture()
+def jikanv4_get_people_pictures():
+    with mock_responses_from_hf('jikanv4_get_people_pictures'):
+        yield
+
+
+@pytest.fixture()
 def jikanv4_search_anime():
     with mock_responses_from_hf('jikanv4_search_anime'):
         yield
@@ -96,4 +138,16 @@ def jikanv4_search_anime():
 @pytest.fixture()
 def jikanv4_search_characters():
     with mock_responses_from_hf('jikanv4_search_characters'):
+        yield
+
+
+@pytest.fixture()
+def jikanv4_search_manga():
+    with mock_responses_from_hf('jikanv4_search_manga'):
+        yield
+
+
+@pytest.fixture()
+def jikanv4_search_people():
+    with mock_responses_from_hf('jikanv4_search_people'):
         yield

@@ -38,6 +38,13 @@ def jikanv4_get_anime_characters():
 
 
 @resp_recorder()
+def jikanv4_get_anime_pictures():
+    client = JikanV4Client()
+    for item in tqdm(client.get_anime_pictures(6213)):
+        requests.get(item['jpg']['image_url'])
+
+
+@resp_recorder()
 def jikanv4_search_characters():
     client = JikanV4Client()
     client.search_characters('Misaka')
@@ -80,3 +87,53 @@ def jikanv4_get_character_pictures():
     client = JikanV4Client()
     for item in tqdm(client.get_character_pictures(13701)):
         requests.get(item['jpg']['image_url'])
+
+
+@resp_recorder()
+def jikanv4_get_manga():
+    client = JikanV4Client()
+    client.get_manga(7776)
+
+
+@resp_recorder()
+def jikanv4_get_manga_full():
+    client = JikanV4Client()
+    client.get_manga_full(7776)
+
+
+@resp_recorder()
+def jikanv4_get_manga_pictures():
+    client = JikanV4Client()
+    for item in tqdm(client.get_manga_pictures(7776)):
+        requests.get(item['jpg']['image_url'])
+
+
+@resp_recorder()
+def jikanv4_search_manga():
+    client = JikanV4Client()
+    client.search_manga('railgun')
+
+
+@resp_recorder()
+def jikanv4_get_people():
+    client = JikanV4Client()
+    client.get_people(241)
+
+
+@resp_recorder()
+def jikanv4_get_people_full():
+    client = JikanV4Client()
+    client.get_people_full(241)
+
+
+@resp_recorder()
+def jikanv4_get_people_pictures():
+    client = JikanV4Client()
+    for item in tqdm(client.get_people_pictures(241)):
+        requests.get(item['jpg']['image_url'])
+
+
+@resp_recorder()
+def jikanv4_search_people():
+    client = JikanV4Client()
+    client.search_people('Satou  Rina')
