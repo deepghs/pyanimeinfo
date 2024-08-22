@@ -171,6 +171,26 @@ Keep the original UA when assigned to empty value.</p></li>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_anime_pictures">
+<span class="sig-name descname"><span class="pre">get_anime_pictures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">anime_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/myanimelist/jikanv4.html#JikanV4Client.get_anime_pictures"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_anime_pictures" title="Permalink to this definition"></a></dt>
+<dd><p>Get pictures information of a specific anime by ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>anime_id</strong> – ID of the anime</p>
+</dd>
+<dt class="field-even">Type<span class="colon">:</span></dt>
+<dd class="field-even"><p>anime_id: int</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Processed JSON data for the API response.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_character">
 <span class="sig-name descname"><span class="pre">get_character</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">character_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/myanimelist/jikanv4.html#JikanV4Client.get_character"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_character" title="Permalink to this definition"></a></dt>
 <dd><p>Get information about a specific character by ID.</p>
@@ -208,17 +228,25 @@ Keep the original UA when assigned to empty value.</p></li>
 <dt class="sig sig-object py" id="pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_character_pictures">
 <span class="sig-name descname"><span class="pre">get_character_pictures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">character_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/myanimelist/jikanv4.html#JikanV4Client.get_character_pictures"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_character_pictures" title="Permalink to this definition"></a></dt>
 <dd><p>Get pictures of a specific character by ID.</p>
+<p>This method retrieves a collection of images associated with the specified character.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>character_id</strong> (<em>int</em>) – ID of the character.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Processed JSON data from the API response.</p>
+<dd class="field-even"><p>Processed JSON data from the API response, containing links to character pictures.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
+<dt class="field-even">Example<span class="colon">:</span></dt>
+<dd class="field-even"><p></p></dd>
 </dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">JikanV4Client</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pictures</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_character_pictures</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">pictures</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -242,34 +270,200 @@ Keep the original UA when assigned to empty value.</p></li>
 <dt class="sig sig-object py" id="pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_character_related_manga">
 <span class="sig-name descname"><span class="pre">get_character_related_manga</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">character_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/myanimelist/jikanv4.html#JikanV4Client.get_character_related_manga"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_character_related_manga" title="Permalink to this definition"></a></dt>
 <dd><p>Get information about manga related to a specific character by ID.</p>
+<p>This method retrieves a list of manga titles that feature the specified character.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>character_id</strong> (<em>int</em>) – ID of the character.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Processed JSON data from the API response.</p>
+<dd class="field-even"><p>Processed JSON data from the API response, containing information about related manga.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
+<dt class="field-even">Example<span class="colon">:</span></dt>
+<dd class="field-even"><p></p></dd>
 </dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">JikanV4Client</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">related_manga</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_character_related_manga</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">related_manga</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_character_voice_actors">
 <span class="sig-name descname"><span class="pre">get_character_voice_actors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">character_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/myanimelist/jikanv4.html#JikanV4Client.get_character_voice_actors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_character_voice_actors" title="Permalink to this definition"></a></dt>
 <dd><p>Get information about voice actors for a specific character by ID.</p>
+<p>This method retrieves a list of voice actors who have portrayed the specified character in various anime adaptations.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>character_id</strong> (<em>int</em>) – ID of the character.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Processed JSON data from the API response.</p>
+<dd class="field-even"><p>Processed JSON data from the API response, containing information about voice actors.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
+<dt class="field-even">Example<span class="colon">:</span></dt>
+<dd class="field-even"><p></p></dd>
 </dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">JikanV4Client</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">voice_actors</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_character_voice_actors</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">voice_actors</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_manga">
+<span class="sig-name descname"><span class="pre">get_manga</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">manga_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/myanimelist/jikanv4.html#JikanV4Client.get_manga"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_manga" title="Permalink to this definition"></a></dt>
+<dd><p>Get basic information about a specific manga by ID.</p>
+<p>This method retrieves basic details about the specified manga, such as title, author, and publication status.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>manga_id</strong> (<em>int</em>) – ID of the manga.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Processed JSON data from the API response, containing basic manga information.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Example<span class="colon">:</span></dt>
+<dd class="field-even"><p></p></dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">JikanV4Client</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">manga_info</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_manga</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">manga_info</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_manga_full">
+<span class="sig-name descname"><span class="pre">get_manga_full</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">manga_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/myanimelist/jikanv4.html#JikanV4Client.get_manga_full"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_manga_full" title="Permalink to this definition"></a></dt>
+<dd><p>Get full information about a specific manga by ID.</p>
+<p>This method retrieves comprehensive details about the specified manga, including synopsis, characters, and more.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>manga_id</strong> (<em>int</em>) – ID of the manga.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Processed JSON data from the API response, containing full manga information.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Example<span class="colon">:</span></dt>
+<dd class="field-even"><p></p></dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">JikanV4Client</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">manga_full_info</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_manga_full</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">manga_full_info</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_manga_pictures">
+<span class="sig-name descname"><span class="pre">get_manga_pictures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">manga_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/myanimelist/jikanv4.html#JikanV4Client.get_manga_pictures"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_manga_pictures" title="Permalink to this definition"></a></dt>
+<dd><p>Get pictures associated with a specific manga by ID.</p>
+<p>This method retrieves a collection of images related to the specified manga, such as cover art and illustrations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>manga_id</strong> (<em>int</em>) – ID of the manga.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Processed JSON data from the API response, containing links to manga pictures.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Example<span class="colon">:</span></dt>
+<dd class="field-even"><p></p></dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">JikanV4Client</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">manga_pictures</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_manga_pictures</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">manga_pictures</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_people">
+<span class="sig-name descname"><span class="pre">get_people</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">people_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/myanimelist/jikanv4.html#JikanV4Client.get_people"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_people" title="Permalink to this definition"></a></dt>
+<dd><p>Get basic information about a specific person by ID.</p>
+<p>This method retrieves basic details about the specified person, such as name and role in the anime/manga industry.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>people_id</strong> (<em>int</em>) – ID of the person.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Processed JSON data from the API response, containing basic information about the person.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Example<span class="colon">:</span></dt>
+<dd class="field-even"><p></p></dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">JikanV4Client</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">person_info</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_people</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">person_info</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_people_full">
+<span class="sig-name descname"><span class="pre">get_people_full</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">people_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/myanimelist/jikanv4.html#JikanV4Client.get_people_full"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_people_full" title="Permalink to this definition"></a></dt>
+<dd><p>Get full information about a specific person by ID.</p>
+<p>This method retrieves comprehensive details about the specified person, including their works and biography.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>people_id</strong> (<em>int</em>) – ID of the person.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Processed JSON data from the API response, containing full information about the person.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Example<span class="colon">:</span></dt>
+<dd class="field-even"><p></p></dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">JikanV4Client</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">person_full_info</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_people_full</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">person_full_info</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_people_pictures">
+<span class="sig-name descname"><span class="pre">get_people_pictures</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">people_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/myanimelist/jikanv4.html#JikanV4Client.get_people_pictures"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyanimeinfo.myanimelist.jikanv4.JikanV4Client.get_people_pictures" title="Permalink to this definition"></a></dt>
+<dd><p>Get pictures of a specific person by ID.</p>
+<p>This method retrieves a collection of images associated with the specified person.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>people_id</strong> (<em>int</em>) – ID of the person.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Processed JSON data from the API response, containing links to pictures of the person.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Example<span class="colon">:</span></dt>
+<dd class="field-even"><p></p></dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">JikanV4Client</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">person_pictures</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_people_pictures</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">person_pictures</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -325,6 +519,82 @@ Keep the original UA when assigned to empty value.</p></li>
 </dl>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="pyanimeinfo.myanimelist.jikanv4.JikanV4Client.search_manga">
+<span class="sig-name descname"><span class="pre">search_manga</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_by</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'mal_id'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'title'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'start_date'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'end_date'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'chapters'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'volumes'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'score'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'scored_by'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'rank'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'popularity'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'members'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'favorites'</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'desc'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'asc'</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type_</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'manga'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'novel'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'lightnovel'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'oneshot'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'doujin'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'manhwa'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'manhua'</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unapproved</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">score</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_score</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_score</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'publishing'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'complete'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'hiatus'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'discontinued'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'upcoming'</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sfw</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">letter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">magazines</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">genres</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">genres_exclude</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/myanimelist/jikanv4.html#JikanV4Client.search_manga"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyanimeinfo.myanimelist.jikanv4.JikanV4Client.search_manga" title="Permalink to this definition"></a></dt>
+<dd><p>Search for manga based on various criteria.</p>
+<p>This method allows for a comprehensive search of manga titles with multiple filtering options.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>query</strong> (<em>str</em>) – Search query string.</p></li>
+<li><p><strong>order_by</strong> (<em>Optional</em><em>[</em><em>Literal</em><em>[</em><em>&quot;mal_id&quot;</em><em>, </em><em>&quot;title&quot;</em><em>, </em><em>&quot;start_date&quot;</em><em>, </em><em>&quot;end_date&quot;</em><em>, </em><em>&quot;chapters&quot;</em><em>, </em><em>&quot;volumes&quot;</em><em>, </em><em>&quot;score&quot;</em><em>, </em><em>&quot;scored_by&quot;</em><em>, </em><em>&quot;rank&quot;</em><em>, </em><em>&quot;popularity&quot;</em><em>, </em><em>&quot;members&quot;</em><em>, </em><em>&quot;favorites&quot;</em><em>]</em><em>]</em>) – Property to order the results by.</p></li>
+<li><p><strong>sort</strong> (<em>Optional</em><em>[</em><em>Literal</em><em>[</em><em>&quot;desc&quot;</em><em>, </em><em>&quot;asc&quot;</em><em>]</em><em>]</em>) – Sort direction for the results.</p></li>
+<li><p><strong>type</strong> (<em>Optional</em><em>[</em><em>Literal</em><em>[</em><em>&quot;manga&quot;</em><em>, </em><em>&quot;novel&quot;</em><em>, </em><em>&quot;lightnovel&quot;</em><em>, </em><em>&quot;oneshot&quot;</em><em>, </em><em>&quot;doujin&quot;</em><em>, </em><em>&quot;manhwa&quot;</em><em>, </em><em>&quot;manhua&quot;</em><em>]</em><em>]</em>) – Type of manga to search for.</p></li>
+<li><p><strong>unapproved</strong> (<em>bool</em>) – Include unapproved entries in the results.</p></li>
+<li><p><strong>score</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em>) – Filter by exact score.</p></li>
+<li><p><strong>min_score</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em>) – Filter by minimum score.</p></li>
+<li><p><strong>max_score</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em>) – Filter by maximum score.</p></li>
+<li><p><strong>status</strong> (<em>Optional</em><em>[</em><em>Literal</em><em>[</em><em>&quot;publishing&quot;</em><em>, </em><em>&quot;complete&quot;</em><em>, </em><em>&quot;hiatus&quot;</em><em>, </em><em>&quot;discontinued&quot;</em><em>, </em><em>&quot;upcoming&quot;</em><em>]</em><em>]</em>) – Filter by publication status.</p></li>
+<li><p><strong>sfw</strong> (<em>bool</em>) – Filter out adult content.</p></li>
+<li><p><strong>letter</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Filter by starting letter of the title.</p></li>
+<li><p><strong>magazines</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>Union</em><em>[</em><em>int</em><em>, </em><em>str</em><em>]</em><em>]</em><em>]</em>) – Filter by magazine IDs.</p></li>
+<li><p><strong>genres</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>Union</em><em>[</em><em>int</em><em>, </em><em>str</em><em>]</em><em>]</em><em>]</em>) – Filter by genre IDs.</p></li>
+<li><p><strong>genres_exclude</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>Union</em><em>[</em><em>int</em><em>, </em><em>str</em><em>]</em><em>]</em><em>]</em>) – Exclude specific genre IDs.</p></li>
+<li><p><strong>start_date</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Filter by start date (format: YYYY-MM-DD).</p></li>
+<li><p><strong>end_date</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Filter by end date (format: YYYY-MM-DD).</p></li>
+<li><p><strong>page</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – Page number for pagination.</p></li>
+<li><p><strong>limit</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – Number of results per page.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Processed JSON data from the API response, containing search results.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Example<span class="colon">:</span></dt>
+<dd class="field-even"><p></p></dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">JikanV4Client</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">search_results</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">search_manga</span><span class="p">(</span><span class="s2">&quot;Naruto&quot;</span><span class="p">,</span> <span class="n">order_by</span><span class="o">=</span><span class="s2">&quot;popularity&quot;</span><span class="p">,</span> <span class="n">sort_</span><span class="o">=</span><span class="s2">&quot;desc&quot;</span><span class="p">,</span> <span class="n">type_</span><span class="o">=</span><span class="s2">&quot;manga&quot;</span><span class="p">,</span> <span class="n">sfw</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">search_results</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyanimeinfo.myanimelist.jikanv4.JikanV4Client.search_people">
+<span class="sig-name descname"><span class="pre">search_people</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order_by</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'mal_id'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'name'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'birthday'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'favorites'</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'desc'</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="s"><span class="pre">'asc'</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">letter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyanimeinfo/myanimelist/jikanv4.html#JikanV4Client.search_people"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyanimeinfo.myanimelist.jikanv4.JikanV4Client.search_people" title="Permalink to this definition"></a></dt>
+<dd><p>Search for people in the anime/manga industry based on various criteria.</p>
+<p>This method allows for searching people such as voice actors, directors, and manga artists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>query</strong> (<em>str</em>) – Search query string.</p></li>
+<li><p><strong>order_by</strong> (<em>Optional</em><em>[</em><em>Literal</em><em>[</em><em>&quot;mal_id&quot;</em><em>, </em><em>&quot;name&quot;</em><em>, </em><em>&quot;birthday&quot;</em><em>, </em><em>&quot;favorites&quot;</em><em>]</em><em>]</em>) – Property to order the results by.</p></li>
+<li><p><strong>sort</strong> (<em>Optional</em><em>[</em><em>Literal</em><em>[</em><em>&quot;desc&quot;</em><em>, </em><em>&quot;asc&quot;</em><em>]</em><em>]</em>) – Sort direction for the results.</p></li>
+<li><p><strong>letter</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Filter by starting letter of the name.</p></li>
+<li><p><strong>page</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – Page number for pagination.</p></li>
+<li><p><strong>limit</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – Number of results per page.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Processed JSON data from the API response, containing search results.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Example<span class="colon">:</span></dt>
+<dd class="field-even"><p></p></dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">client</span> <span class="o">=</span> <span class="n">JikanV4Client</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">search_results</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">search_people</span><span class="p">(</span><span class="s2">&quot;Miyazaki&quot;</span><span class="p">,</span> <span class="n">order_by</span><span class="o">=</span><span class="s2">&quot;favorites&quot;</span><span class="p">,</span> <span class="n">sort_</span><span class="o">=</span><span class="s2">&quot;desc&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">search_results</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
 </dd></dl>
 
 </section>
@@ -370,7 +640,6 @@ Keep the original UA when assigned to empty value.</p></li>
                 </dl>
                 <dl>
                     <dt>Branches</dt>
-                        <dd><a href="../../../dev/jikannew/api_doc/myanimelist/jikanv4.html">dev/jikannew</a></dd>
                         <dd><a href="jikanv4.html">main</a></dd>
                 </dl>
         </div>
